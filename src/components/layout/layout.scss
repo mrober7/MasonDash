@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    align-items: center;
+
+    .header-logo {
+        width: 50px;
+        img {
+            width: 100%;
+        }
+    }
+    .header-title {
+        padding: 0 10px;
+        font-weight: bold;
+        flex: 1;
+    }
+    .header-links {
+        padding: 0 10px;
+        font-size: 80%;
+    }
+}
+
+.section {
+    flex: 1;
+    display: grid;
+
+    .item {
+        background-color: slateblue;
+        gap: 10px;
+        border: 1px solid yellow;
+    }
+}
+
+.footer {
+    font-size: 75%;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    border-top: 1px solid black;
+}
