@@ -1,0 +1,15 @@
+.login-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    .login-button{
+        text-align: auto;
+        background-color:cadetblue;
+    }
+}

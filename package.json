@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "concurrently \"npm run serve\" \"npm run mock\"",
-    "serve": "webpack serve --open",
+    "start": "webpack serve --open",
     "mock": "json-server --watch mock.json --port 5002",
-    "build": "set NODE_ENV=production&& webpack"
+    "build": "set NODE_ENV=production&& webpack",
+    "start-with-mock": "concurrently \"npm run serve\" \"npm run mock\""
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

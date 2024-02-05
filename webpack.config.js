@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 let mode = "development";
 let target = "web"; //targets on modern browser in DEV mode
@@ -14,7 +15,9 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
     mode: mode,
     target: target,
-    entry: "./src/index.js",
+    entry: {
+        index: "./src/index.js",
+    },
     optimization: {
         splitChunks: {
             cacheGroups: {
@@ -42,8 +45,9 @@ module.exports = {
     },
     resolve: {
         alias: {
-            layout: path.resolve(__dirname, "src/components/layout/layout"),
+            components: path.resolve(__dirname, "src/components"),
             images: path.resolve(__dirname, "src/images"),
+            services: path.resolve(__dirname, "src/services"),
         },
     },
     module: {
@@ -109,9 +113,25 @@ module.exports = {
         // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/index.html",
+            filename: "index.html",
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/login.html",
+            filename: "login.html",
+            chunks: ['index']
         }),
         new MiniCSSExtractPlugin({
             filename: "./[name].css?[contenthash]",
+        }),
+        new CopyPlugin({
+            patterns: [{
+                from: './src/data',
+                to: './data'
+            },{
+                from: './src/images',
+                to: './images'
+            }],
         }),
     ],
     devtool: mode === "production" ? false : "source-map",
