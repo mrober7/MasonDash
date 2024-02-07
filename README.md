@@ -1,5 +1,5 @@
 # Mason Dash
-** Streamlining Academic Experience **
+**Streamlining Academic Experience**
 
 Welcome to Mason Dash, your all-in-one web application designed to enhance the academic experience for George Mason University students and staff.
 
@@ -10,6 +10,7 @@ Welcome to Mason Dash, your all-in-one web application designed to enhance the a
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Demo](#demo)
+- [Technologies Used](#technologies-used)
 
 ## Introduction
 
@@ -44,10 +45,25 @@ Mason Dash is a responsive web application tailored for the George Mason Univers
 
 ## Getting Started
 
-## Usage
+To get started with Mason Dash, follow these steps:
 
-Once the application is running, open your preferred web browser and go to ____ to access Mason Dash. Log in using the sample provided credentials through Okta to explore our demo version to see the features in action.
+1. Clone the repository to your local machine.
+
+2. Open the project in your preferred code editor.
+
+3. Set up the project dependencies and configure the necessary environment variables.
+
+4. Follow the [Usage](#usage) instructions to run the application.
+
+## Usage
 
 ## Demo
 
-Check out our live demo at ___ to experience the power of Mason Dash. Please note that this is a demo version with limited functionality for illustrative purposes.
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- AWS (S3, Lambda, API Gateway)
+- Amazon Cognito (for authentication)
+
