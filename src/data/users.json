@@ -28,5 +28,10 @@
         "email": "vsonnaku@gmu.edu",
         "name": "Vaibhav",
         "type": "student"
+    }, 
+    "matthew": {
+        "email": "mrober7@gmu.edu",
+        "name": "Matthew",
+        "type": "student"
     }
 }
