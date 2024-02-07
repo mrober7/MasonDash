@@ -18,5 +18,10 @@
         "email": "rishiS@gmail.com",
         "name": "Rish",
         "type": "staff"
+    },
+    "thomas": {
+        "email": "btucker6@gmu.edu",
+        "name": "Thomas",
+        "type": "student"
     }
 }
