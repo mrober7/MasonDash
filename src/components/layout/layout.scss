@@ -53,44 +53,35 @@
   gap: 10px;
   padding: 10px;
   grid-template-areas:
-    "item1 item2"
-    "item3 item4"
-    "item5 item5";
+    "courses info"
+    "future map"
+    "credits credits";
   grid-template-rows: auto auto;
   grid-template-columns: auto auto;
 
-  .item1 {
-    grid-area: item1;
+  .item {
     background-color: slateblue;
-    gap: 10px;
     border: 1px solid yellow;
   }
 
-  .item2 {
-    grid-area: item2;
-    background-color: slateblue;
-    gap: 10px;
-    border: 1px solid yellow;
+  .courses {
+    grid-area: courses;
   }
 
-  .item3 {
-    grid-area: item3;
-    background-color: slateblue;
-    gap: 10px;
-    border: 1px solid yellow;
-  }
-  .item4 {
-    grid-area: item4;
-    background-color: slateblue;
-    gap: 10px;
-    border: 1px solid yellow;
+  .info {
+    grid-area: info;
   }
 
-  .item5 {
-    grid-area: item5;
-    background-color: slateblue;
-    gap: 10px;
-    border: 1px solid yellow;
+  .future {
+    grid-area: future;
+  }
+
+  .map {
+    grid-area: map;
+  }
+
+  .credits {
+    grid-area: credits;
   }
 }
 
@@ -101,11 +92,11 @@
     gap: 10px;
     padding: 10px;
     grid-template-areas:
-      "item1"
-      "item2"
-      "item3"
-      "item4"
-      "item5";
+      "courses"
+      "info"
+      "future"
+      "map"
+      "credits";
     grid-template-rows: auto;
     grid-template-columns: auto;
   }

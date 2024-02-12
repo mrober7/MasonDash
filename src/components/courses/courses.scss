@@ -1,0 +1,22 @@
+.item {
+  &.courses {
+    padding: 10px;
+    table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        padding: 5px;
+        border: 1px solid darkblue;
+      }
+
+      thead {
+        td {
+          background-color: darkblue;
+          color: white;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import user from 'components/user/user';
-import templateHtml from './layout.html';
+import courses from 'components/courses/courses';
+import template from './layout.hbs';
 import './layout.scss';
 
 const layout = {
@@ -9,17 +10,22 @@ const layout = {
     section: null,
 
     init() {
-        this._render();
+        this._renderLayout();
         this._bindListeners();
+        this._loadData();
     },
 
-    _render() {
+    _renderLayout() {
         this.element = document.querySelector('body');
-        this.element.innerHTML = templateHtml;
+        this.element.innerHTML = template();
         // this.header = this.element.querySelector('header');
         // this.section = this.element.querySelector('section');
         // this.footer = this.element.querySelector('footer');
+    },
+
+    _loadData() {
         user.init();
+        courses.init();
     },
 
     _bindListeners() {

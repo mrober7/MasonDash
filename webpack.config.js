@@ -96,7 +96,7 @@ module.exports = {
                 test: /\.hbs$/,
                 loader: 'handlebars-loader',
                 options: {
-                    helperDirs: path.join(__dirname, '/src/common/helpers'),
+                    helperDirs: path.join(__dirname, '/src/hbs/helpers'),
                     precompileOptions: {
                         knownHelpersOnly: false,
                     }
@@ -145,11 +145,12 @@ module.exports = {
         historyApiFallback: true,
         proxy: {
             "/api": {
-                target: 'http://localhost:6001',
+                // target: 'http://localhost:6001',
+                target: 'https://e9k5w84jxe.execute-api.us-east-1.amazonaws.com/dev',
                 //to user modifier to proxy
-                // pathRewrite: {
-                //     "^/api": "",
-                // },
+                pathRewrite: {
+                    "^/api": "",
+                },
                 secure: false,
                 changeOrigin: true,
             },

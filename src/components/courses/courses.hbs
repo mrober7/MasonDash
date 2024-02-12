@@ -1,0 +1,26 @@
+{{#if main}}
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Credits</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+{{/if}}
+
+{{#if row}}
+{{#each data}}
+<tr>
+  <td>{{this.id}}</td>
+  <td>{{this.name}}</td>
+  <td>{{this.credits}}</td>
+  <td>
+    <button>View</button>
+  </td>
+</tr>
+{{/each}}
+{{/if}}
