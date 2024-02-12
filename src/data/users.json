@@ -2,7 +2,7 @@
     "naina": {
         "email": "nkoujala@gmail.com",
         "name": "Sreenaina",
-        "type": "strudent"
+        "type": "student"
     },
     "sima": {
         "email": "skarsli@gmail.com",
@@ -13,5 +13,25 @@
         "email": "kevin123@gmail.com",
         "name": "Kevin",
         "type": "staff"
+    },
+    "rish": {
+        "email": "rishiS@gmail.com",
+        "name": "Rish",
+        "type": "staff"
+    },
+    "thomas": {
+        "email": "btucker6@gmu.edu",
+        "name": "Thomas",
+        "type": "student"
+    },
+    "vaibhav": {
+        "email": "vsonnaku@gmu.edu",
+        "name": "Vaibhav",
+        "type": "student"
+    }, 
+    "matthew": {
+        "email": "mrober7@gmu.edu",
+        "name": "Matthew",
+        "type": "student"
     }
 }
