@@ -9,29 +9,30 @@
         "name": "Sima",
         "type": "student"
     },
-    "kevin": {
-        "email": "kevin123@gmail.com",
-        "name": "Kevin",
-        "type": "staff"
-    },
-    "rish": {
-        "email": "rishiS@gmail.com",
-        "name": "Rish",
-        "type": "staff"
-    },
     "thomas": {
-        "email": "btucker6@gmu.edu",
+        "email": "ttucker@gmail.com",
         "name": "Thomas",
         "type": "student"
     },
     "vaibhav": {
-        "email": "vsonnaku@gmu.edu",
+        "email": "vsonnakul@gmail.com",
         "name": "Vaibhav",
         "type": "student"
     }, 
     "matthew": {
-        "email": "mrober7@gmu.edu",
+        "email": "mroberts@gmail.com",
         "name": "Matthew",
         "type": "student"
+    },
+    "saif": {
+        "email": "smurad@gmail.com",
+        "name": "Saif",
+        "type": "student"
+    },
+    "ryan": {
+        "email": "rsullivan@gmail.com",
+        "name": "Ryan",
+        "type": "student"
     }
+
 }
