@@ -1,3 +1,4 @@
+import cookieService from '../../services/cookieService';
 import templateHtml from './login.html';
 import './login.scss';
 
@@ -20,7 +21,7 @@ const login = {
             let value = inputName.value;
             if (value) {
                 //store into localstorage;
-                localStorage.setItem('mason-user', value);
+                cookieService.set('mason-user', value, 30);
                 top.location = 'index.html';
             }
         })

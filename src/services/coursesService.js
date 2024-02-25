@@ -1,7 +1,10 @@
+import cookieService from "./cookieService";
+
 const courses = {
-    async getCourses() {
-        let response = await fetch('/api/courses');
+    async get() {
+        let response = await fetch("/api/courses");
         let data = await response.json();
+        // window.courses = data;
         return data;
     },
 };

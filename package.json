@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --open",
-    "mock": "json-server --watch mock.json --port 5002",
-    "build": "set NODE_ENV=production&& webpack",
-    "start-with-mock": "concurrently \"npm run serve\" \"npm run mock\""
+    "build": "set NODE_ENV=production&& webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
@@ -19,7 +17,6 @@
     "handlebars-loader": "^1.7.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "json-server": "^0.17.3",
     "mini-css-extract-plugin": "^2.7.5",
     "sass": "^1.61.0",
     "sass-loader": "^13.2.2",

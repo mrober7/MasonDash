@@ -1,10 +1,12 @@
+import cookieService from "./cookieService";
+import studentsService from "./studentsService";
+
 const usersService = {
-    async getCurrentUser() {
-        let response = await fetch('./data/users.json');
-        let users = await response.json();
-        let strUser = localStorage.getItem('mason-user');
-        return users[strUser].name;
-    }
+    async get() {
+        let user = cookieService.get('mason-user');
+        let data = await studentsService.getMe(user);
+        return data;
+    },
 };
 
-export default usersService;
+export default usersService;    

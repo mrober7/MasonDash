@@ -1,0 +1,16 @@
+sample code
+
+    async addCourse() {
+        // let data = {
+        //     "id": "CS310",
+        //     "credits": 4,
+        //     "name": "Data Structures"
+        // };
+        // let response = await fetch(`/api/courses/`, {
+        //     method: "PUT",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(data)
+        // });
+    }

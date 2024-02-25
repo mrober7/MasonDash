@@ -125,13 +125,16 @@ module.exports = {
             filename: "./[name].css?[contenthash]",
         }),
         new CopyPlugin({
-            patterns: [{
-                from: './src/data',
-                to: './data'
-            },{
-                from: './src/images',
-                to: './images'
-            }],
+            patterns: [
+                // {
+                //     from: './src/data',
+                //     to: './data'
+                // }, 
+                {
+                    from: './src/images',
+                    to: './images'
+                }
+            ],
         }),
     ],
     devtool: mode === "production" ? false : "source-map",
@@ -146,11 +149,11 @@ module.exports = {
         proxy: {
             "/api": {
                 // target: 'http://localhost:6001',
-                target: 'https://e9k5w84jxe.execute-api.us-east-1.amazonaws.com/dev',
+                target: 'https://hcb4fe3n03.execute-api.us-east-1.amazonaws.com/dev',
                 //to user modifier to proxy
-                pathRewrite: {
-                    "^/api": "",
-                },
+                // pathRewrite: {
+                //     "^/api": "api",
+                // },
                 secure: false,
                 changeOrigin: true,
             },

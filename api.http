@@ -1,0 +1,36 @@
+@url = https://hcb4fe3n03.execute-api.us-east-1.amazonaws.com/dev/api
+
+###
+GET {{url}}/courses HTTP/1.1
+
+###
+PUT {{url}}/courses HTTP/1.1
+content-type: application/json
+
+{
+    "id": "CS321",
+    "credits": 3,
+    "name": "Software Engineering",
+    "professor": "Ivan",
+    "days": [
+        {"Mon": ["09:00 AM", "10:15 AM"] },
+        {"Wed" : ["09:00 AM", "10:15 AM"] }
+    ],
+    "location": "Innovation Hall",
+    "prerequisites": ["CS211", "CS330"]
+}
+
+###
+GET {{url}}/students HTTP/1.1
+
+###
+PUT {{url}}/students HTTP/1.1
+content-type: application/json
+
+{
+    "id": "G01309546",
+    "name": "Sreenaina",
+    "email": "skouja@gmu.edu",
+    "courses": ["CS310", "CS330", "CS321"]
+}
+
