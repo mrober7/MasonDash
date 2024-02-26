@@ -1,5 +1,3 @@
-import cookieService from "./cookieService";
-
 const courses = {
     async get() {
         let response = await fetch("/api/courses");

@@ -19,8 +19,8 @@ const courses = {
 
     async _loadData() {
         let courses = await coursesService.get();
+        // let futurecourses = await coursesService.get();
         let me = await studentsService.getMe();
-        console.log(me, courses);
 
         let data = [];
         //loop through my courses
