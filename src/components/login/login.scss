@@ -1,5 +1,52 @@
 .login-user {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 10px;
+    .login-box{
+        
+        height: auto;
+        width: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid white;
+        background-color: white;
+        border-radius: 1rem;
+        gap: 1rem;
+        box-shadow: 10px 10px 16px -7px rgba(0,0,0,0.75);
+        .login-name{
+            height: 1rem;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            
+            
+        }
+        .login-name::placeholder{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        button{
+            
+            background: green;
+            width: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 10px;
+            border-radius: 1rem;
+            color: white;
+            transition: all 0.1s ease-in-out;
+            &:hover{
+                color: green;
+                background-color: white;
+                cursor: pointer;
+                border-color: green;
+                scale: 105%;
+                box-shadow: 10px 10px 16px -7px rgba(0,0,0,0.75);
+            }
+        }
+        
+}
 }

@@ -18,22 +18,35 @@
     .header-title {
       padding: 0 10px;
       font-weight: bold;
+      color: white;
     }
   }
   .header-user {
     padding: 0 10px;
     flex: 1;
     text-align: center;
+    
   }
   .header-links {
     display: flex;
     padding: 0 10px;
-    font-size: 80%;
     gap: 10px;
 
     button {
-      background-color: navy;
+      background-color: green;
       color: white;
+      border: solid 2px white;
+      border-radius: 10px;
+      padding: 7px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      &:hover{
+        color: green;
+        background-color: white;
+        cursor: pointer;
+        border-color: green;
+        scale: 105%;
+      }
     }
   }
 }
@@ -44,7 +57,8 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  border-top: 1px solid black;
+  border-top: 2px solid black;
+  color: white;
 }
 
 .section {
@@ -60,9 +74,15 @@
   grid-template-columns: auto auto;
 
   .item {
-    background-color: slateblue;
-    border: 1px solid yellow;
+    background-color: green;
+    
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    
   }
+
 
   .courses {
     grid-area: courses;
@@ -82,6 +102,7 @@
 
   .credits {
     grid-area: credits;
+    
   }
 }
 
