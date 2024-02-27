@@ -1,20 +1,31 @@
 .item {
+
   &.courses {
-    padding: 10px;
+    padding: 0px;
     table {
+      
       display: table;
       width: 100%;
       border-collapse: collapse;
-
-      td {
-        padding: 5px;
-        border: 1px solid darkblue;
+      tr{
+        display: flex;
+        justify-content: space-around;
+        td {
+          padding: 5px;
+          border: 1px solid bisque; 
+          width: auto;
+          
+        }
       }
 
       thead {
         td {
-          background-color: darkblue;
+          flex-basis: auto;
+          background-color: black;
           color: white;
+          padding: 1px 5px;
+        
+          border-radius: 10px;
         }
       }
     }
