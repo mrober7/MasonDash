@@ -1,33 +1,55 @@
 .item {
-
   &.courses {
-    padding: 0px;
+    padding: 10px;
     table {
-      
       display: table;
       width: 100%;
       border-collapse: collapse;
-      tr{
-        display: flex;
-        justify-content: space-around;
-        td {
-          padding: 5px;
-          border: 1px solid bisque; 
-          width: auto;
-          
-        }
+
+      td {
+        padding: 5px;
+        border: 1px solid darkblue;
       }
 
       thead {
         td {
-          flex-basis: auto;
-          background-color: black;
+          background-color: darkblue;
           color: white;
-          padding: 1px 5px;
-        
-          border-radius: 10px;
         }
       }
     }
   }
 }
+
+// .item {
+//   &.courses {
+//     padding: 0px;
+//     table {
+
+//       display: table;
+//       width: 100%;
+//       border-collapse: collapse;
+//       tr{
+//         display: flex;
+//         justify-content: space-around;
+//         td {
+//           padding: 5px;
+//           border: 1px solid bisque;
+//           width: auto;
+
+//         }
+//       }
+
+//       thead {
+//         td {
+//           flex-basis: auto;
+//           background-color: black;
+//           color: white;
+//           padding: 1px 5px;
+
+//           border-radius: 10px;
+//         }
+//       }
+//     }
+//   }
+// }
