@@ -18,9 +18,6 @@ const layout = {
     _renderLayout() {
         this.element = document.querySelector('body');
         this.element.innerHTML = template();
-        // this.header = this.element.querySelector('header');
-        // this.section = this.element.querySelector('section');
-        // this.footer = this.element.querySelector('footer');
     },
 
     _loadData() {

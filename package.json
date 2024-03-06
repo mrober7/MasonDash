@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "set NODE_ENV=production&& webpack"
+    "build": "set NODE_ENV=production&& webpack",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
@@ -17,6 +18,7 @@
     "handlebars-loader": "^1.7.3",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.7.0",
     "mini-css-extract-plugin": "^2.7.5",
     "sass": "^1.61.0",
     "sass-loader": "^13.2.2",

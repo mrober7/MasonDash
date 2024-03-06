@@ -6,7 +6,6 @@ const students = {
         let user = cookieService.get('mason-user');
         let response = await fetch(`${aws.uri}/students/${user}`);
         let data = await response.json();
-        // window.me = data;
         return data;
     },
 };
