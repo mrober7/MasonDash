@@ -148,12 +148,7 @@ module.exports = {
         historyApiFallback: true,
         proxy: {
             "/api": {
-                // target: 'http://localhost:6001',
-                target: 'https://hcb4fe3n03.execute-api.us-east-1.amazonaws.com/dev',
-                //to user modifier to proxy
-                // pathRewrite: {
-                //     "^/api": "api",
-                // },
+                target: 'https://mdapi.sreenaina.com',
                 secure: false,
                 changeOrigin: true,
             },
