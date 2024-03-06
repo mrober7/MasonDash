@@ -1,7 +1,5 @@
-let page = location.hostname;
-let apigateway = 'https://mdapi.sreenaina.com/api'; //or https://masondashapi.sreenaina.com/api
 const aws = { 
-    uri: (page === 'localhost') ? '/api': apigateway
+    uri: 'https://mdapi.sreenaina.com/api' //or https://masondashapi.sreenaina.com/api
 };
 
 export default aws;
