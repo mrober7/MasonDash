@@ -1,26 +1,42 @@
 {{#if main}}
-<table>
-  <thead>
-    <tr>
-      <td>Id</td>
-      <td>Name</td>
-      <td>Credits</td>
-      <td>Action</td>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
-{{/if}}
-
-{{#if row}}
-{{#each data}}
-<tr>
-  <td>{{this.id}}</td>
-  <td>{{this.name}}</td>
-  <td>{{this.credits}}</td>
-  <td>
-    <button>View</button>
-  </td>
-</tr>
-{{/each}}
+<div class="week">
+  <div class="time">
+    <div class="time-title">-</div>
+    <div class="time-events">
+      <div class="time-event">08:00 AM</div>
+      <div class="time-event">09:00 AM</div>
+      <div class="time-event">10:00 AM</div>
+      <div class="time-event">11:00 AM</div>
+      <div class="time-event">12:00 PM</div>
+      <div class="time-event">01:00 PM</div>
+      <div class="time-event">02:00 PM</div>
+      <div class="time-event">03:00 PM</div>
+      <div class="time-event">04:00 PM</div>
+      <div class="time-event">05:00 PM</div>
+      <div class="time-event">06:00 PM</div>
+      <div class="time-event">07:00 PM</div>
+      <div class="time-event">08:00 PM</div>
+    </div>
+  </div>
+  <div class="day mon">
+    <div class="day-title">Mon</div>
+    <div class="day-events"></div>
+  </div>
+  <div class="day tue">
+    <div class="day-title">Tue</div>
+    <div class="day-events"></div>
+  </div>
+  <div class="day wed">
+    <div class="day-title">Wed</div>
+    <div class="day-events"></div>
+  </div>
+  <div class="day thu">
+    <div class="day-title">Thu</div>
+    <div class="day-events"></div>
+  </div>
+  <div class="day fri">
+    <div class="day-title">Fri</div>
+    <div class="events"></div>
+  </div>
+</div>
 {{/if}}
