@@ -1,4 +1,4 @@
-@url = https://hcb4fe3n03.execute-api.us-east-1.amazonaws.com/dev/api
+@url = https://mdapi.sreenaina.com/api
 
 ###
 GET {{url}}/courses HTTP/1.1
@@ -8,16 +8,16 @@ PUT {{url}}/courses HTTP/1.1
 content-type: application/json
 
 {
-    "id": "CS330",
-    "credits": 4,
-    "name": "Formal Methods and Models",
-    "professor": "John Otten",
+    "id": "CS321",
+    "credits": 3,
+    "name": "Software Engineering",
+    "professor": "Wes Masri",
     "days": [
-        {"Mon": ["09:00 AM", "10:15 AM"] },
-        {"Wed" : ["09:00 AM", "10:15 AM"] }
+        {"Mon": ["12:00 PM", "1:15 PM"] },
+        {"Wed" : ["12:00 PM", "1:15 PM"] }
     ],
-    "location": "Enterprise Hall",
-    "prerequisites": ["CS211", "CS330"],
+    "location": "Innovation Hall",
+    "prerequisites": ["CS211"],
     "type": "lecture",
     "terms": ["Spring 2024", "Fall 2024"]
 }
