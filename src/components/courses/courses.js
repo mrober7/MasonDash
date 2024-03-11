@@ -49,15 +49,47 @@ const courses = {
             matchedCourses.push(...match);
         });
 
-        // generate HTML using the Handlebars template with row as true and the matched data
-        let rowHtml = template({
-            row: true,
-            data: matchedCourses,
-        });
-
-        // insert the generated HTML after the tbody element in the component
-        this.element.querySelector('tbody').insertAdjacentHTML('afterend', rowHtml);
+        // embed each course using absolute position
+        matchedCourses.forEach((course) => {
+            let days = course.days;
+            days.forEach((day) => {
+                for (const [key, value] of Object.entries(day)) {
+                    let start = value[0];
+                    let end = value[1];
+                    let startPos = this._timeDiff(start)/2; // /2 because of 30px height
+                    let dayElement = this.element.querySelector(`.day.${key.toLowerCase()}`);
+                    let html = `<div class='day-event' style='top: ${startPos}px;' start='${start}' end='${end}'>${course.id}</div>`;
+                    dayElement.querySelector(`.day-events`).insertAdjacentHTML('beforeend', html);
+                }
+            })
+        })
     },
+
+    _timeDiff(start) {
+        const startTimeString = '8:00 AM';
+        const endTimeString = start;
+
+        // Convert time strings to milliseconds
+        const startMinutes = this._timeStringToMinutes(startTimeString);
+        const endMinutes = this._timeStringToMinutes(endTimeString);
+
+        // Calculate the time difference in milliseconds
+        const minutes = endMinutes - startMinutes;
+        return minutes;
+    },
+
+    _timeStringToMinutes(timeString) {
+        const [time, period] = timeString.split(' ');
+        const [hours, minutes] = time.split(':').map(Number);
+
+        let totalMilliseconds = (hours % 12) * 60 * 60 * 1000 + minutes * 60 * 1000;
+
+        if (period.toUpperCase() === 'PM') {
+            totalMilliseconds += 12 * 60 * 60 * 1000;
+        }
+
+        return totalMilliseconds/(1000 * 60);
+    }
 };
 // export courses object to make it available for other modules to use
 export default courses;
