@@ -1,55 +1,64 @@
-.item {
-  &.courses {
-    padding: 10px;
-    table {
-      display: table;
-      width: 100%;
-      border-collapse: collapse;
+.section {
+  .item {
+    &.courses {
+      .week {
+        display: flex;
+        flex-direction: row;
 
-      td {
-        padding: 5px;
-        border: 1px solid darkblue;
-      }
+        .time {
+          .time-event {
+            height: 30px;
+            padding: 5px;
+            background-color: darkgreen;
+            // border-bottom: 1px solid white;
+          }
+        }
 
-      thead {
-        td {
-          background-color: darkblue;
-          color: white;
+        .day {
+          border: 1px solid darkgreen;
+          flex: 1;
+
+          .day-title {
+            background: darkgreen;
+          }
+
+          .day-events {
+            position: relative;
+
+            .day-event {
+              background-color: gray;
+              border-top: 1px solid white;
+              border-bottom: 1px solid white;
+              position: absolute;
+              padding: 5px;
+              left: 0px;
+              width: 100%;
+
+              &:hover {
+                cursor: pointer;
+                &:before {
+                  content: attr(start);
+                  position: absolute;
+                  top: -10px;
+                  right: 2px;
+                  font-size: 60%;
+                  width: 50px;
+                  text-align: right;
+                }
+                &:after {
+                  content: attr(end);
+                  position: absolute;
+                  bottom: -10px;
+                  right: 2px;
+                  font-size: 60%;
+                  width: 50px;
+                  text-align: right;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
-
-// .item {
-//   &.courses {
-//     padding: 0px;
-//     table {
-
-//       display: table;
-//       width: 100%;
-//       border-collapse: collapse;
-//       tr{
-//         display: flex;
-//         justify-content: space-around;
-//         td {
-//           padding: 5px;
-//           border: 1px solid bisque;
-//           width: auto;
-
-//         }
-//       }
-
-//       thead {
-//         td {
-//           flex-basis: auto;
-//           background-color: black;
-//           color: white;
-//           padding: 1px 5px;
-
-//           border-radius: 10px;
-//         }
-//       }
-//     }
-//   }
-// }
