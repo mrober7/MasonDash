@@ -19,7 +19,8 @@ const user = {
         // $span variable 
         let $span = $user.querySelector('span');
         // setting the inner HTML of the span element to the user's name
-        $span.innerHTML = user.name;
+        let displayName = user.email.split('@')[0];
+        $span.innerHTML = displayName;
     }
 };
 // export user object to make it available for other modules to use
