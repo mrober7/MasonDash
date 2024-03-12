@@ -54,6 +54,7 @@
   font-size: 75%;
   flex: 1;
   padding: 10px;
+  overflow: auto;
 
   .item {
     background-color: var(--mason-section-light-gray);
