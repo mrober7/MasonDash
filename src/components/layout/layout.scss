@@ -8,8 +8,8 @@
     display: flex;
     align-items: center;
     .header-logo {
-      width: 50px;
-      aspect-ratio: 1;
+      height: 40px;
+      aspect-ratio: 800/670;
       padding: 0 10px;
       background-image: url("../../images/logo.png");
       background-repeat: none;
@@ -28,24 +28,14 @@
   }
   .header-links {
     display: flex;
-    padding: 0 10px;
-    gap: 10px;
 
     button {
-      background-color: green;
-      color: white;
-      border: solid 2px white;
-      border-radius: 10px;
-      padding: 7px;
-      transition: all 0.3s ease;
-      font-weight: bold;
-      &:hover {
-        color: green;
-        background-color: white;
-        cursor: pointer;
-        border-color: green;
-        scale: 105%;
-      }
+      background-image: url("../../images/logout.png");
+      height: 30px;
+      aspect-ratio: 1;
+      background-size: cover;
+      border: none;
+      background-color: transparent;
     }
   }
 }
@@ -56,65 +46,46 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  border-top: 2px solid black;
+  border-top: 1px solid var(--mason-section-dark-gray);
   color: white;
 }
 
 .section {
   font-size: 75%;
   flex: 1;
-  display: grid;
-  gap: 10px;
   padding: 10px;
-  grid-template-areas:
-    "courses info"
-    "future map"
-    "credits credits";
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
 
   .item {
-    background-color: green;
-    border: 1px solid black;
+    background-color: var(--mason-section-light-gray);
     border-radius: 5px;
-    padding: 5px;
     color: white;
-  }
+    margin-bottom: 10px;
+    user-select: none;
 
-  .courses {
-    grid-area: courses;
-  }
+    .item-title {
+      background-color: var(--mason-section-dark-gray);
+      padding: 5px;
 
-  .info {
-    grid-area: info;
-  }
+      &:before {
+        content: "\27A4";
+        margin-right: 5px;
+        display: inline-block;
+      }
+    }
 
-  .future {
-    grid-area: future;
-  }
+    &[data-state="open"] {
+      .item-title {
+        &:before {
+          rotate: 90deg;
+        }
+      }
+      .item-body {
+        display: block;
+      }
+    }
 
-  .map {
-    grid-area: map;
-  }
-
-  .credits {
-    grid-area: credits;
-  }
-}
-
-@media (max-width: 650px) {
-  .section {
-    flex: 1;
-    display: grid;
-    gap: 10px;
-    padding: 10px;
-    grid-template-areas:
-      "courses"
-      "info"
-      "future"
-      "map"
-      "credits";
-    grid-template-rows: auto;
-    grid-template-columns: auto;
+    .item-body {
+      display: none;
+    }
   }
 }
