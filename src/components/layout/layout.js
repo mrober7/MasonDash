@@ -3,6 +3,8 @@
 import user from 'components/user/user';
 // import courses component to render data for in layout
 import courses from 'components/courses/courses';
+// import info component to render data for in layout
+import info from 'components/info/info';
 // import html from layout.hbs to display custom data in using innerHTML
 import template from './layout.hbs';
 // import layout scss file to style and display the layout on the dashboard
@@ -34,8 +36,11 @@ const layout = {
     _loadData() {
         // initialize the user component to load data
         user.init();
-        // initialize the courses components to load data
+        // initialize the courses component to load data
         courses.init();
+        // initialize the info component to load data
+        info.init();
+
     },
     // private method to bind event listeners for the layout
     _bindListeners() {
@@ -53,6 +58,23 @@ const layout = {
                     localStorage.removeItem('mason-user');
                     // redirect to the login.html page after user exits
                     top.location = 'login.html';
+                }
+            });
+        });
+
+        // select all elements with the class 'item' in the section
+        let titles = document.querySelectorAll('.item-title');
+        // add a click event listener to each item title
+        titles.forEach((title) => {
+            title.addEventListener('click', (e) => {
+                // get the data-action attribute value from the clicked link
+                let item = e.target.closest('.item');
+                let strState = item.getAttribute('data-state');
+                // check if the action is exit
+                if (strState === 'open') {
+                    item.setAttribute('data-state', 'close');
+                } else {
+                    item.setAttribute('data-state', 'open');
                 }
             });
         });
