@@ -27,7 +27,7 @@ const courses = {
         });
 
         // set the inner HTML of the selected element to the generated HTML
-        this.element.innerHTML = mainHtml;
+        this.element.querySelector('.item-body').innerHTML = mainHtml;
     },
 
     // private method to load data asynchronously for the courses component
@@ -57,8 +57,10 @@ const courses = {
                     let start = value[0];
                     let end = value[1];
                     let startPos = this._timeDiff(start)/2; // /2 because of 30px height
+                    let endPos = this._timeDiff(end)/2; // /2 because of 30px height
+                    let height = endPos - startPos;
                     let dayElement = this.element.querySelector(`.day.${key.toLowerCase()}`);
-                    let html = `<div class='day-event' style='top: ${startPos}px;' start='${start}' end='${end}'>${course.id}</div>`;
+                    let html = `<div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}'>${course.id}</div>`;
                     dayElement.querySelector(`.day-events`).insertAdjacentHTML('beforeend', html);
                 }
             })
