@@ -45,4 +45,20 @@ content-type: application/json
     "gpa": "3.5"
 }
 
+{
+    "id": "G01304733",
+    "name": "Thomas Rockwell Tucker",
+    "email": "btucker6@gmu.edu",
+    "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS306", "CS310"],
+    "courses": ["CS321", "CS367", "CS450", "CS480"],
+    "futurecourses": ["CS471", "CS483", "CS475", "CS463", "CS477", "CS468", "CS499"],
+    "advisor": "Brian Hrolenok",
+    "major": "Computer Science",
+    "year": "Junior",
+    "enrollment": "full-time",
+    "term": "Spring 2024",
+    "graduation": "Spring 2025",
+    "gpa": "3.82"
+}
+
 
