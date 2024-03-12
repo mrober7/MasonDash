@@ -1,18 +1,32 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mason-bgcolor: #555;
+  --mason-section-dark-gray: #333;
+  --mason-section-light-gray: #808080;
+  --mason-section-green: #005000;
+  --mason-section-dark-green: #003000;
+  --mason-section-light-green: #008000;
+  --mason-section-light-blue: #1000f1;
+  --mason-section-dark-blue: #0b00a9;
+  --mason-section-light-purple: #8c00ff;
+  --mason-section-dark-purple: #6302b3;
+  --mason-section-light-orange: #df8900;
+  --mason-section-dark-orange: #9d6100;
 }
 
 html,
 body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    font-family: Cambria, serif;
-    font-size: 18px;
-    background: rgb(26,167,23);
-    background: linear-gradient(0deg, rgba(26,167,23,1) 50%, rgba(253,248,45,1) 100%);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Cambria, serif;
+  font-size: 1.2rem;
+  background: var(--mason-bgcolor);
 }
