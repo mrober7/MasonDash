@@ -1,20 +1,34 @@
 <header class="header">
   <div class="header-logo-title">
     <div class="header-logo"></div>
-    <div class="header-title">Mason Dash</div>
+    {{!-- <div class="header-title">Mason Dash</div> --}}
   </div>
   <div class="header-user"></div>
   <div class="header-links">
-    <button class="header-link" data-action="home">Home</button>
-    <button class="header-link" data-action="exit">Exit</button>
+    <button class="header-link" data-action="exit"></button>
   </div>
 </header>
 <section class="section">
-  <div class="item courses">Courses</div>
-  <div class="item info">Info</div>
-  <div class="item future">Future</div>
-  <div class="item map">Map</div>
-  <div class="item credits">Credits</div>
+  <div class="item courses" data-state="open">
+    <div class="item-title">Courses</div>
+    <div class="item-body"></div>
+  </div>
+  <div class="item info">
+    <div class="item-title">Info</div>
+    <div class="item-body"></div>
+  </div>
+  <div class="item future">
+    <div class="item-title">Future</div>
+    <div class="item-body">Future Schedule Builder</div>
+  </div>
+  <div class="item map">
+    <div class="item-title">Map</div>
+    <div class="item-body">Map Image</div>
+  </div>
+  <div class="item credits">
+    <div class="item-title">Credits</div>
+    <div class="item-body">Credits Body</div>
+  </div>
 </section>
 <footer class="footer">
   <p>&copy; 2024 Mason Dash</p>
