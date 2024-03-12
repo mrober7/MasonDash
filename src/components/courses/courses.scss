@@ -6,29 +6,35 @@
         flex-direction: row;
 
         .time {
+          .time-title {
+            background: var(--mason-section-green);
+            padding: 5px;
+          }
+
           .time-event {
             height: 30px;
             padding: 5px;
-            background-color: darkgreen;
-            // border-bottom: 1px solid white;
+            background-color: var(--mason-section-green);
+            border-top: 1px solid gray;
           }
         }
 
         .day {
-          border: 1px solid darkgreen;
+          border-right: 1px solid var(--mason-section-green);
           flex: 1;
 
           .day-title {
-            background: darkgreen;
+            background: var(--mason-section-green);
+            padding: 5px;
           }
 
           .day-events {
             position: relative;
 
             .day-event {
-              background-color: gray;
-              border-top: 1px solid white;
-              border-bottom: 1px solid white;
+              background-color: var(--mason-section-light-orange);
+              // border-top: 1px solid white;
+              // border-bottom: 1px solid white;
               position: absolute;
               padding: 5px;
               left: 0px;
@@ -54,6 +60,16 @@
                   width: 50px;
                   text-align: right;
                 }
+              }
+
+              &.CS321 {
+                background-color: var(--mason-section-light-blue);
+              }
+              &.CS330 {
+                background-color: var(--mason-section-light-purple);
+              }
+              &.CS262 {
+                background-color: var(--mason-section-dark-orange);
               }
             }
           }
