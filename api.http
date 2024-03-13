@@ -21,6 +21,20 @@ content-type: application/json
     "type": "lecture",
     "terms": ["Spring 2024", "Fall 2024"]
 }
+{
+    "id": "CS330",
+    "credits": 3,
+    "name": "Formal Methods and Models",
+    "professor": "Wes Masri",
+    "days": [
+        {"Mon": ["3:00 PM", "4:15 PM"] },
+        {"Wed" : ["3:00 PM", "4:15 PM"] }
+    ],
+    "location": "Nguyen Engr. Bldg",
+    "prerequisites": ["CS211"],
+    "type": "lecture",
+    "terms": ["Spring 2024", "Fall 2024"]
+}
 
 ###
 GET {{url}}/students HTTP/1.1
