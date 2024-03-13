@@ -95,6 +95,20 @@ content-type: application/json
 # }
 
 # {
+#     "id": "G01130804",
+#     "name": "Ryan Sullivan",
+#     "email": "rsulli@gmu.edu",
+#     "finishedcourses": ["CS110", "CS112", "CS211", "CS330", "CS310"],
+#     "futurecourses"
+#     "advisor": "Assad Khan",
+#     "major": "Mathematics",
+#     "year": "Senior",
+#     "enrollment": "full-time",
+#     "term": "Spring 2024",
+#     "graduation": "Spring 2024",
+#     "gpa": "3.01"
+# }
+{
 #     "id": "G01319827",
 #     "name": "Matthew Roberts",
 #     "email": "mrober7@gmu.edu",
