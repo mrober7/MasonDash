@@ -19,7 +19,7 @@ content-type: application/json
     "location": "Innovation Hall",
     "prerequisites": ["CS211"],
     "type": "lecture",
-    "terms": ["Spring 2024", "Fall 2024"]
+    "terms": ["Spring 2024", "Fall 2024"],
 }
 {
     "id": "CS330",
@@ -43,7 +43,7 @@ GET {{url}}/students HTTP/1.1
 PUT {{url}}/students HTTP/1.1
 content-type: application/json
 
-# when you add your info, only add CS courses
+# when you add your info, only add CS core courses
 
 # {
 #     "id": "G01309546",
@@ -51,14 +51,15 @@ content-type: application/json
 #     "email": "skoujal@gmu.edu",
 #     "finishedcourses": ["CS110", "CS112", "CS211", "CS306", "CS310"],
 #     "courses": ["CS262", "CS330", "CS321"],
-#     "futurecourses": ["CS367", "CS471", "CS483", "CS475", "CS463", "CS450", "CS477", "CS468", "CS499"],
+#     "futurecourses": ["CS367", "CS471", "CS483"],
 #     "advisor": "Brian Hrolenok",
 #     "major": "Computer Science",
 #     "year": "Junior",
 #     "enrollment": "full-time",
 #     "term": "Spring 2024",
 #     "graduation": "Spring 2025",
-#     "gpa": "3.5"
+#     "gpa": "3.5",
+#     "sections": ["001", "002", "003"],
 # }
 
 # {
@@ -66,8 +67,8 @@ content-type: application/json
 #     "name": "Thomas Rockwell Tucker",
 #     "email": "btucker6@gmu.edu",
 #     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS306", "CS310"],
-#     "courses": ["CS321", "CS367", "CS450", "CS480"],
-#     "futurecourses": ["CS471", "CS483", "CS475", "CS463", "CS477", "CS468", "CS499"],
+#     "courses": ["CS321", "CS367"],
+#     "futurecourses": ["CS471", "CS483"],
 #     "advisor": "Brian Hrolenok",
 #     "major": "Computer Science",
 #     "year": "Junior",
@@ -82,8 +83,8 @@ content-type: application/json
 #     "name": "Vaibhav Sonnakul",
 #     "email": "vsonnaku@gmu.edu",
 #     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
-#     "courses": ["CS321", "CS367", "CS450"],
-#     "futurecourses": ["CS571", "CS583", "CS555", "CS463", "CS477", "CS468", "CS580"],
+#     "courses": ["CS321", "CS367"],
+#     "futurecourses": ["CS471", "CS483", "CS306"],
 #     "advisor": "Brian Hrolenok",
 #     "major": "Computer Science",
 #     "year": "Junior",
@@ -93,4 +94,19 @@ content-type: application/json
 #     "gpa": "3.8"
 # }
 
+# {
+#     "id": "G01319827",
+#     "name": "Matthew Roberts",
+#     "email": "mrober7@gmu.edu",
+#     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
+#     "courses": ["CS321", "CS367", "CS483"],
+#     "futurecourses": ["CS306", "CS471"],
+#     "advisor": "Brian Hrolenok",
+#     "major": "Computer Science",
+#     "year": "Junior",
+#     "enrollment": "full-time",
+#     "term": "Spring 2024",
+#     "graduation": "Spring 2025",
+#     "gpa": "3.96"
+# }
 
