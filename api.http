@@ -79,4 +79,19 @@ content-type: application/json
 #     "gpa": "3.8"
 # }
 
+# {
+#     "id": "G01319827",
+#     "name": "Matthew Roberts",
+#     "email": "mrober7@gmu.edu",
+#     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
+#     "courses": ["CS321", "CS367", "CS483"],
+#     "futurecourses": ["CS306"],
+#     "advisor": "Brian Hrolenok",
+#     "major": "Computer Science",
+#     "year": "Junior",
+#     "enrollment": "full-time",
+#     "term": "Spring 2024",
+#     "graduation": "Spring 2025",
+#     "gpa": "3.96"
+# }
 
