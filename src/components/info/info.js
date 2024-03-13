@@ -30,7 +30,7 @@ const info = {
 
     // private method to load data asynchronously for the info component
     async _loadData() {
-        // fetch information about the current student
+        // fetch information about the current student info to display in pills
         let studentInfo = await studentsService.getMe();
         console.log(studentInfo);
         let pillHtml = template({
