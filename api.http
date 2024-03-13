@@ -61,4 +61,20 @@ content-type: application/json
     "gpa": "3.82"
 }
 
+{
+    "id": "G01292339",
+    "name": "Vaibhav Sonnakul",
+    "email": "vsonnaku@gmu.edu",
+    "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
+    "courses": ["CS321", "CS367", "CS450", "SWE419"],
+    "futurecourses": ["CS571", "CS583", "CS555", "CS463", "CS477", "CS468", "CS580"],
+    "advisor": "Brian Hrolenok",
+    "major": "Computer Science",
+    "year": "Junior",
+    "enrollment": "full-time",
+    "term": "Spring 2024",
+    "graduation": "Spring 2025",
+    "gpa": "3.8"
+}
+
 
