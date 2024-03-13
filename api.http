@@ -85,7 +85,7 @@ content-type: application/json
 #     "email": "mrober7@gmu.edu",
 #     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
 #     "courses": ["CS321", "CS367", "CS483"],
-#     "futurecourses": ["CS306"],
+#     "futurecourses": ["CS306", "CS471"],
 #     "advisor": "Brian Hrolenok",
 #     "major": "Computer Science",
 #     "year": "Junior",
