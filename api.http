@@ -1,3 +1,4 @@
+
 @url = https://mdapi.sreenaina.com/api
 
 ###
@@ -8,32 +9,18 @@ PUT {{url}}/courses HTTP/1.1
 content-type: application/json
 
 {
-    "id": "CS321",
+    "id": "CS321-002",
     "credits": 3,
     "name": "Software Engineering",
-    "professor": "Wes Masri",
+    "professor": "Wassim Masri",
     "days": [
         {"Mon": ["12:00 PM", "1:15 PM"] },
         {"Wed" : ["12:00 PM", "1:15 PM"] }
     ],
     "location": "Innovation Hall",
-    "prerequisites": ["CS211"],
+    "prerequisites": ["CS310"],
     "type": "lecture",
-    "terms": ["Spring 2024", "Fall 2024"],
-}
-{
-    "id": "CS330",
-    "credits": 3,
-    "name": "Formal Methods and Models",
-    "professor": "Wes Masri",
-    "days": [
-        {"Mon": ["3:00 PM", "4:15 PM"] },
-        {"Wed" : ["3:00 PM", "4:15 PM"] }
-    ],
-    "location": "Nguyen Engr. Bldg",
-    "prerequisites": ["CS211"],
-    "type": "lecture",
-    "terms": ["Spring 2024", "Fall 2024"]
+    "room": "215G",
 }
 
 ###
@@ -43,24 +30,21 @@ GET {{url}}/students HTTP/1.1
 PUT {{url}}/students HTTP/1.1
 content-type: application/json
 
-# when you add your info, only add CS core courses
-
-# {
-#     "id": "G01309546",
-#     "name": "Sreenaina Koujala",
-#     "email": "skoujal@gmu.edu",
-#     "finishedcourses": ["CS110", "CS112", "CS211", "CS306", "CS310"],
-#     "courses": ["CS262", "CS330", "CS321"],
-#     "futurecourses": ["CS367", "CS471", "CS483"],
-#     "advisor": "Brian Hrolenok",
-#     "major": "Computer Science",
-#     "year": "Junior",
-#     "enrollment": "full-time",
-#     "term": "Spring 2024",
-#     "graduation": "Spring 2025",
-#     "gpa": "3.5",
-#     "sections": ["001", "002", "003"],
-# }
+{
+    "id": "G01309546",
+    "name": "Sreenaina Koujala",
+    "email": "skoujal@gmu.edu",
+    "finishedcourses": ["CS110", "CS112", "CS211", "CS306", "CS310"],
+    "courses": ["CS262", "CS330", "CS321"],
+    "futurecourses": ["CS367", "CS471", "CS483"],
+    "advisor": "Brian Hrolenok",
+    "major": "Computer Science",
+    "year": "Junior",
+    "enrollment": "full-time",
+    "term": "Spring 2024",
+    "graduation": "Spring 2025",
+    "gpa": "3.5",
+}
 
 # {
 #     "id": "G01304733",
@@ -95,6 +79,22 @@ content-type: application/json
 # }
 
 # {
+#     "id": "G01319827",
+#     "name": "Matthew Roberts",
+#     "email": "mrober7@gmu.edu",
+#     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
+#     "courses": ["CS321", "CS367", "CS483"],
+#     "futurecourses": ["CS306"],
+#     "advisor": "Brian Hrolenok",
+#     "major": "Computer Science",
+#     "year": "Junior",
+#     "enrollment": "full-time",
+#     "term": "Spring 2024",
+#     "graduation": "Spring 2025",
+#     "gpa": "3.96"
+# }
+
+# {
 #     "id": "G01130804",
 #     "name": "Ryan Sullivan",
 #     "email": "rsulli@gmu.edu",
@@ -108,19 +108,24 @@ content-type: application/json
 #     "graduation": "Spring 2024",
 #     "gpa": "3.01"
 # }
-{
-#     "id": "G01319827",
-#     "name": "Matthew Roberts",
-#     "email": "mrober7@gmu.edu",
-#     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS330", "CS310"],
-#     "courses": ["CS321", "CS367", "CS483"],
-#     "futurecourses": ["CS306", "CS471"],
+
+# {
+#     "id": “G01280318",
+#     "name": “Gulsima Karsli”,
+#     "email": “gkarsli@gmu.edu",
+#     "finishedcourses": ["CS110", "CS112", "CS211", "CS262", "CS310"],
+#     "courses": ["CS321", "CS367", "CS330”],
+#     "futurecourses": ["CS483”, "CS306”, "CS471”, "CS463", "CS477", "CS468", "CS580”],
 #     "advisor": "Brian Hrolenok",
 #     "major": "Computer Science",
 #     "year": "Junior",
 #     "enrollment": "full-time",
 #     "term": "Spring 2024",
-#     "graduation": "Spring 2025",
-#     "gpa": "3.96"
+#     "graduation": “Fall 2025",
+#     "gpa": “3.75”
 # }
+
+
+
+
 
