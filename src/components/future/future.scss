@@ -11,7 +11,7 @@
             padding: 5px;
           }
 
-          .time-event {
+          .time-event-future {
             height: 30px;
             padding: 5px;
             background-color: var(--mason-section-green);
@@ -85,10 +85,10 @@
                 background-color: var(--mason-section-dark-orange);
               }
               &.CS483-002 {
-                background-color: #5F9EA0;
+                background-color: #5f9ea0;
               }
               &.CS367-001 {
-                background-color: #BC8F8F;
+                background-color: #bc8f8f;
               }
             }
           }

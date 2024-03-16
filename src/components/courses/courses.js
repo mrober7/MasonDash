@@ -60,7 +60,6 @@ const courses = {
                     let startPos = this._timeDiff(start) / 2; // /2 because of 30px height
                     let endPos = this._timeDiff(end) / 2; // /2 because of 30px height
                     let height = endPos - startPos;
-                    console.log(course.id.split('-')[0]);
                     let dayElement = this.element.querySelector(`.day.${key.toLowerCase()}`);
                     let html = `<div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}'>${courseId}</div>`;
                     dayElement.querySelector(`.day-events`).insertAdjacentHTML('beforeend', html);

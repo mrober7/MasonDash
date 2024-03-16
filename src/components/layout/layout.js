@@ -5,6 +5,8 @@ import user from 'components/user/user';
 import courses from 'components/courses/courses';
 // import info component to render data for in layout
 import info from 'components/info/info';
+// import future component to render data for in layout
+import future from 'components/future/future';
 // import html from layout.hbs to display custom data in using innerHTML
 import template from './layout.hbs';
 // import layout scss file to style and display the layout on the dashboard
@@ -40,6 +42,8 @@ const layout = {
         courses.init();
         // initialize the info component to load data
         info.init();
+        // initialize the future component to load data
+        future.init();
 
     },
     // private method to bind event listeners for the layout

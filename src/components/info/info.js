@@ -32,7 +32,6 @@ const info = {
     async _loadData() {
         // fetch information about the current student info to display in pills
         let studentInfo = await studentsService.getMe();
-        console.log(studentInfo);
         let pillHtml = template({
             pill: true,
             data: studentInfo
