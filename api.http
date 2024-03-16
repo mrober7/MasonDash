@@ -8,6 +8,104 @@ PUT {{url}}/courses HTTP/1.1
 content-type: application/json
 
 {
+    "id": "CS110-001",
+    "credits": 3,
+    "name": "Essentials of Computer Science",
+    "professor": "Shahnaz Kamberi",
+    "days": [
+        {"Mon": ["3:00 PM", "4:15 PM"] },
+        {"Wed" : ["3:00 PM", "4:15 PM"] }
+    ],
+    "location": "Enterprise Hall",
+    "prerequisites": [],
+    "type": "lecture",
+    "room": "80"
+}
+{
+    "id": "CS112-001",
+    "credits": 4,
+    "name": "Intro Computer Programming",
+    "professor": "Zoo Zaman",
+    "days": [
+        {"Mon": ["1:30 PM", "2:45 PM"] },
+        {"Wed" : ["1:30 PM", "2:45 PM"] }
+    ],
+    "location": "Enterprise Hall",
+    "prerequisites": [],
+    "type": "lecture",
+    "room": "178"
+}
+{
+    "id": "CS211-001",
+    "credits": 3,
+    "name": "Object-Oriented Programming",
+    "professor": "Archange Destine",
+    "days": [
+        {"Tue": ["3:00 PM", "4:15 PM"] },
+        {"Thu" : ["3:00 PM", "4:15 PM"] }
+    ],
+    "location": "Horizon Hall",
+    "prerequisites": ["CS112"],
+    "type": "lecture",
+    "room": "2014"
+}
+{
+    "id": "CS310-002",
+    "credits": 3,
+    "name": "Data Structures",
+    "professor": "Socrates Dimitriadis",
+    "days": [
+        {"Mon": ["1:30 PM", "2:45 PM"] },
+        {"Wed" : ["1:30 PM", "2:45 PM"] }
+    ],
+    "location": "Planetary Hall",
+    "prerequisites": ["CS211"],
+    "type": "lecture",
+    "room": "129"
+}
+{
+    "id": "CS262-001",
+    "credits": 3,
+    "name": "Intro to Low-level Programming",
+    "professor": "Loreto Gonzalez Hernandez",
+    "days": [
+        {"Tue": ["12:00 PM", "1:15 PM"] },
+        {"Thu" : ["12:00 PM", "1:15 PM"] }
+    ],
+    "location": "Innovation Hall",
+    "prerequisites": ["CS110", "CS211"],
+    "type": "lecture",
+    "room": "132"
+}
+{
+    "id": "CS330-005",
+    "credits": 3,
+    "name": "Formal Methods and Models",
+    "professor": "Ivan Avramovic",
+    "days": [
+        {"Tue": ["10:30 AM", "11:45 AM"] },
+        {"Thu" : ["10:30 AM", "11:45 AM"] }
+    ],
+    "location": "Horizon Hall",
+    "prerequisites": ["CS211"],
+    "type": "lecture",
+    "room": "2008"
+}
+{
+    "id": "CS330-001",
+    "credits": 3,
+    "name": "Formal Methods and Models",
+    "professor": "Cem Evrendilek",
+    "days": [
+        {"Mon": ["3:00 PM", "4:15 PM"] },
+        {"Wed" : ["3:00 PM", "4:15 PM"] }
+    ],
+    "location": "Nguyen Engineering Building",
+    "prerequisites": ["CS211"],
+    "type": "lecture",
+    "room": "1101"
+}
+{
     "id": "CS321-002",
     "credits": 3,
     "name": "Software Engineering",
@@ -20,6 +118,89 @@ content-type: application/json
     "prerequisites": ["CS310"],
     "type": "lecture",
     "room": "215G"
+}
+{
+    "id": "CS367-004",
+    "credits": 4,
+    "name": "Computer Systems and Programming",
+    "professor": "Kevin Andreas",
+    "days": [
+        {"Tue": ["9:00 AM", "10:15 AM"] },
+        {"Thu": ["9:00 AM", "10:15 AM"] }
+    ],
+    "location": "Horizon Hall",
+    "prerequisites": ["CS110", "CS262"],
+    "type": "lecture",
+    "room": "2009"
+}
+{
+    "id": "CS367-003",
+    "credits": 4,
+    "name": "Computer Systems and Programming",
+    "professor": "Kevin Andreas",
+    "days": [
+        {"Tue": ["10:30 AM", "11:45 AM"] },
+        {"Thu": ["10:30 AM", "11:45 AM"] }
+    ],
+    "location": "Horizon Hall",
+    "prerequisites": ["CS110", "CS262"],
+    "type": "lecture",
+    "room": "2016"
+}
+{
+    "id": "CS367-001",
+    "credits": 4,
+    "name": "Computer Systems and Programming",
+    "professor": "Hamza Mughal",
+    "days": [
+        {"Mon": ["1:30 PM", "2:45 PM"] },
+        {"Wed": ["1:30 PM", "2:45 PM"] }
+    ],
+    "location": "Horizon Hall",
+    "prerequisites": ["CS110", "CS262"],
+    "type": "lecture",
+    "room": "1014"
+}
+{
+    "id": "CS483-002",
+    "credits": 3,
+    "name": "Analysis of Algorithms",
+    "professor": "Raven K. Russell",
+    "days": [
+        {"Mon": ["3:00 PM", "4:15 PM"] },
+        {"Wed": ["3:00 PM", "4:15 PM"] }
+    ],
+    "location": "Music/Theater Building",
+    "prerequisites": ["CS310", "CS330"],
+    "type": "lecture",
+    "room": "1005"
+}
+{
+    "id": "CS471-001",
+    "credits": 3,
+    "name": "Operating Systems",
+    "professor": "Sapna Gambhir",
+    "days": [
+        {"Tue": ["4:30 PM", "7:10 PM"] }
+    ],
+    "location": "Enterprise Hall",
+    "prerequisites": ["CS310", "CS367"],
+    "type": "lecture",
+    "room": "80"
+}
+{
+    "id": "CS306-001",
+    "credits": 3,
+    "name": "Synt Ethics/Law for Comp Professionals",
+    "professor": "Tamara Maddox",
+    "days": [
+        {"Tue": ["9:00 AM", "10:15 AM"] },
+        {"Thu": ["9:00 AM", "10:15 AM"] }
+    ],
+    "location": "Nguyen Engineering Building",
+    "prerequisites": ["CS110"],
+    "type": "lecture",
+    "room": "1107"
 }
 
 ###
