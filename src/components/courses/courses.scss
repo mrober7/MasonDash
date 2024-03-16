@@ -20,11 +20,12 @@
         }
 
         .day {
-          border-right: 1px solid var(--mason-section-green);
+          border-right: 1px solid var(--mason-section-gray);
           flex: 1;
 
           .day-title {
             background: var(--mason-section-green);
+            border-right: none;
             padding: 5px;
           }
 
@@ -32,9 +33,7 @@
             position: relative;
 
             .day-event {
-              background-color: var(--mason-section-light-orange);
-              // border-top: 1px solid white;
-              // border-bottom: 1px solid white;
+              background-color: var(--mason-section-light-purple);
               position: absolute;
               padding: 5px;
               left: 0px;
