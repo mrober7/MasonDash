@@ -52,15 +52,17 @@ const courses = {
         // embed each course using absolute position
         matchedCourses.forEach((course) => {
             let days = course.days;
+            let courseId = course.id.split('-')[0];
             days.forEach((day) => {
                 for (const [key, value] of Object.entries(day)) {
                     let start = value[0];
                     let end = value[1];
-                    let startPos = this._timeDiff(start)/2; // /2 because of 30px height
-                    let endPos = this._timeDiff(end)/2; // /2 because of 30px height
+                    let startPos = this._timeDiff(start) / 2; // /2 because of 30px height
+                    let endPos = this._timeDiff(end) / 2; // /2 because of 30px height
                     let height = endPos - startPos;
+                    console.log(course.id.split('-')[0]);
                     let dayElement = this.element.querySelector(`.day.${key.toLowerCase()}`);
-                    let html = `<div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}'>${course.id}</div>`;
+                    let html = `<div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}'>${courseId}</div>`;
                     dayElement.querySelector(`.day-events`).insertAdjacentHTML('beforeend', html);
                 }
             })
@@ -90,7 +92,7 @@ const courses = {
             totalMilliseconds += 12 * 60 * 60 * 1000;
         }
 
-        return totalMilliseconds/(1000 * 60);
+        return totalMilliseconds / (1000 * 60);
     }
 };
 // export courses object to make it available for other modules to use
