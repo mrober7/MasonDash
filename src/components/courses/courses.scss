@@ -12,8 +12,11 @@
                     }
 
                     .time-event {
-                        height: 30px;
-                        padding: 5px;
+                        display: flex;
+                        height: 40px;
+                        width: 100px;
+                        align-items: center;
+                        justify-content: center;
                         background-color: var(--mason-section-green);
                         border-top: 1px solid gray;
                     }

@@ -59,8 +59,9 @@ const courses = {
                 for (const [key, value] of Object.entries(day)) {
                     let start = value[0];
                     let end = value[1];
-                    let startPos = this._timeDiff(start) / 2; // /2 because of 30px height
-                    let endPos = this._timeDiff(end) / 2; // /2 because of 30px height
+                    let startPos = this._timeDiff(start)/1.5 //1.5 because of 60px height
+                    console.log(startPos)
+                    let endPos = this._timeDiff(end)/1.5; //1.5 because of 60px height
                     let height = endPos - startPos;
                     let dayElement = this.element.querySelector(
                         `.day.${key.toLowerCase()}`
