@@ -1,9 +1,9 @@
 // index.js root JS file
-// import layout component to display if user is logged in
-import layout from 'components/layout/layout';
+// import app module
+import app from './app';
 // import index scss file to style the dashboard page
 import './index.scss';
-// import login component to display if user is not logged in
+// import login component 
 import login from './components/login/login';
 // import cookieService that handles setting and getting a cookie to check if user is valid
 import cookieService from './services/cookieService';
@@ -18,8 +18,7 @@ const index = {
             // retrieve the mason-user cookie using cookieService get function
             let masonUser = cookieService.get('mason-user');
             if (masonUser) {
-                // if the cookie is present, initialize the layout component
-                layout.init();
+                app.init();
             } else {
                 // if the cookie is not present, redirect to login.html
                 top.location = 'login.html';
