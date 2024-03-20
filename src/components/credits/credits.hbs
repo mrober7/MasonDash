@@ -1,0 +1,20 @@
+{{#if main}}
+    <div class="pills">
+
+    </div>
+{{/if}}
+
+{{#if pill}}
+    <div class="pill">
+        <div class="pill-title">Completed Courses</div>
+        <div class="pill-text"><div>{{data.finishedcourseIDs}}</div>
+    </div>
+    <div class="pill">
+        <div class="pill-title">Current Courses</div>
+        <div class="pill-text"><div>{{data.completedcourseIDs}}</div>
+    </div>
+    <div class="pill">
+        <div class="pill-title">Future Courses</div>
+        <div class="pill-text"><div>{{data.futurecourseIDs}}</div>
+    </div>
+{{/if}}
