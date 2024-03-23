@@ -12,17 +12,17 @@ import future from "components/future/future";
 
 const app = {
     // initialize function for index module
-    init() {
+    async init() {
         //initialize the layout component
         layout.init();
         // initialize the user component to load data
-        user.init();
+        await user.init();
         // initialize the courses component to load data
-        courses.init();
+        await courses.init();
         // initialize the info component to load data
-        info.init();
+        await info.init();
         // initialize the future component to load data
-        future.init();
+        await future.init();
     },
 };
 
