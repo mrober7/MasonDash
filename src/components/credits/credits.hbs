@@ -1,22 +1,41 @@
 {{#if main}}
-    <div class="pills"></div>
-{{/if}}
-
-{{#if pill}}
-    <div class="pill">
-        <div class="pill-title">Completed Courses</div>
-        <div class="pill-text">
-            {{#each finishedcourses}}
-                <div>{{this.id}} - {{this.credits}}</div>
-            {{/each}}
-        </div>
-    </div>
-    <div class="pill">
-        <div class="pill-title">Current Courses</div>
-        <div class="pill-text">{{courses}}</div>
-    </div>
-    <div class="pill">
-        <div class="pill-title">Future Courses</div>
-        <div class="pill-text">{{futurecourses}}</div>
+    <div class="pills">
+        <table class="courses-table">
+            <thead>
+                <tr>
+                    <th>Current Courses</th>
+                    <th>Finished Courses</th>
+                    <th>Future Courses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="courses-section">
+                        {{#each courses}}
+                            <div class="pill">
+                                <div class="pill-title">Course</div>
+                                <div class="pill-text">{{this.courseName}}</div>
+                            </div>
+                        {{/each}}
+                    </td>
+                    <td class="courses-section">
+                        {{#each finishedcourses}}
+                            <div class="pill">
+                                <div class="pill-title">Course</div>
+                                <div class="pill-text">{{this.courseName}}</div>
+                            </div>
+                        {{/each}}
+                    </td>
+                    <td class="courses-section">
+                        {{#each futurecourses}}
+                            <div class="pill">
+                                <div class="pill-title">Course</div>
+                                <div class="pill-text">{{this.courseName}}</div>
+                            </div>
+                        {{/each}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 {{/if}}
