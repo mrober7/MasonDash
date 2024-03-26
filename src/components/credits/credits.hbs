@@ -3,24 +3,24 @@
         <table class="courses-table">
             <thead>
                 <tr>
-                    <th>Current Courses</th>
                     <th>Finished Courses</th>
+                    <th>Current Courses</th>
                     <th>Future Courses</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="courses-section">
-                        {{#each courses}}
+                     <td class="courses-section">
+                        {{#each finishedcourses}}
                             <div class="pill">
-                                <div class="pill-text">{{this}}</div>
+                                <div class="pill-text">{{this.id}}</div>
                             </div>
                         {{/each}}
                     </td>
                     <td class="courses-section">
-                        {{#each finishedcourses}}
+                        {{#each courses}}
                             <div class="pill">
-                                <div class="pill-text">{{this.courseName}}</div>
+                                <div class="pill-text">{{this}}</div>
                             </div>
                         {{/each}}
                     </td>
