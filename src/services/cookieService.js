@@ -1,21 +1,21 @@
 // cookie service for handling cookies
 const cookieService = {
     // method to set a cookie with a specified name, value, and expiration time in minutes
-    set: (cname, cvalue, minutes) => {
+    set(cname, cvalue, minutes) {
         //set duration in millseconds
         const duration = minutes * 60 * 1000;
-        
+
         cookieStore.set({
             name: cname,
             value: cvalue,
-            expires: Date.now() + duration
+            expires: Date.now() + duration,
         });
     },
 
     // method to get the value of a cookie with a specified name
-    get: async (cname) => {
+    async get(cname) {
         const cookie = await cookieStore.get(cname);
-        let cookieValue = '';
+        let cookieValue = "";
         if (cookie) {
             cookieValue = cookie.value;
         }
