@@ -13,7 +13,7 @@ const studentsService = {
             return studentData;
         }
         // retrieve the 'mason-user' cookie value using 'cookieService'
-        let user = cookieService.get('mason-user');
+        let user = await cookieService.get('mason-user');
         // construct the URL by combining the 'uri' from 'aws' module with the '/students' path and the user ID
         let response = await fetch(`${aws.uri}/students/${user}`);
         // parse the JSON data from the response

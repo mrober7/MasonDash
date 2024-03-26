@@ -3,9 +3,12 @@
         &.credits {
             .pills {
                 padding: 10px;
+                display: flex;
+                flex-direction: column;
 
                 .pill {
                     display: flex;
+                    margin-bottom: 10px;
                     .pill-title {
                         padding: 3px 10px;
                         width: 100px;
@@ -20,6 +23,7 @@
                         background-color: var(--mason-section-light-green);
                         border-radius: 0 2px 2px 0;
                         margin-bottom: 2px;
+                        flex: 1;
                     }
                 }
             }

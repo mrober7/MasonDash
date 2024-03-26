@@ -9,6 +9,8 @@ import courses from "components/courses/courses";
 import info from "components/info/info";
 // import future component to render data for in layout
 import future from "components/future/future";
+// import credits component to render data for in layout
+import credits from "components/credits/credits";
 
 const app = {
     // initialize function for index module
@@ -23,6 +25,8 @@ const app = {
         await info.init();
         // initialize the future component to load data
         await future.init();
+        // initialize the courses component to load data
+        await credits.init();
     },
 };
 

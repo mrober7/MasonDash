@@ -7,7 +7,7 @@ const usersService = {
     // async method to fetch user information
     async get() {
         // retrieve mason-user cookie value using cookieService
-        let user = cookieService.get('mason-user');
+        let user = await cookieService.get('mason-user');
         // fetch user data using the studentsService and passing the user ID
         let data = await studentsService.getMe(user);
         // return the fetched user data

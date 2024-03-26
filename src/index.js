@@ -10,13 +10,13 @@ import cookieService from './services/cookieService';
 
 const index = {
     // initialize function for index module
-    init() {
+    async init() {
         // page variable stores the page pathname from the URL
         let page = location.pathname.substring(1);
         // if page is not equal to login.html then the user is logged in
         if (page !== 'login.html') {
             // retrieve the mason-user cookie using cookieService get function
-            let masonUser = cookieService.get('mason-user');
+            let masonUser = await cookieService.get('mason-user');
             if (masonUser) {
                 app.init();
             } else {
