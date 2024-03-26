@@ -18,13 +18,15 @@
                         align-items: center;
                         justify-content: center;
                         background-color: var(--mason-section-green);
-                        border-top: 1px solid gray;
+                        border-top: 1px solid rgb(0, 0, 0);
+                        border-right: 1px solid rgb(0, 0, 0);
                     }
                 }
 
                 .day {
                     border-right: 1px solid var(--mason-section-gray);
                     flex: 1;
+                    position: relative;
 
                     .day-title {
                         background: var(--mason-section-green);
@@ -110,6 +112,18 @@
                                 background-color: #bc8f8f;
                             }
                         }
+                    }
+
+                    /* horizontal gridlines for each hour */
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -9px; /* aligning for each hour (i know, it's scuffed) */
+                        left: 0;
+                        right: 0;
+                        height: 100%;
+                        background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgb(0, 0, 0) 39px, rgb(0, 0, 0) 40px); /* Repeat every 40 pixels */
+                        pointer-events: none; /* allow clicks to go through */
                     }
                 }
             }

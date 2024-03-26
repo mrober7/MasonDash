@@ -11,7 +11,14 @@
                     th, td {
                         padding: 10px;
                         border: 1px solid #ffffff;
+                    }
+                    /* background color for headers */
+                    th {
                         background-color: var(--mason-section-green);
+                    }
+                    /* Background color for rows */
+                    td {
+                        background-color: var(--mason-section-light-green);
                     }
 
                     .courses-section {
