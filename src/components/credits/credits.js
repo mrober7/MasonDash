@@ -48,6 +48,8 @@ const credits = {
             // add the matched courses to the array
             matchedCourses.push(...match);
         });
+
+        return matchedCourses;
     },
 
     // private method to load data asynchronously for the info component
