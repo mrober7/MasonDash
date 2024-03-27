@@ -1,47 +1,114 @@
 .login-user {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .login-box {
-    height: auto;
-    width: auto;
-    padding: 1rem;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
-    background-color: white;
-    border-radius: 1rem;
-    gap: 1rem;
-    box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
-    .login-name {
-      height: 1rem;
-      border: 2px solid black;
-      border-radius: 5px;
-      padding: 10px;
-    }
-    .login-name::placeholder {
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    }
-    button {
-      background: green;
-      width: 100px;
-      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-      padding: 10px;
-      border-radius: 1rem;
-      color: white;
-      transition: all 0.1s ease-in-out;
-      &:hover {
-        color: green;
-        background-color: white;
-        cursor: pointer;
-        border-color: green;
-        scale: 105%;
+    .login-box {
+        font-family: "Franklin Gothic Medium";
+        height: 18rem;
+        width: auto;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        // border: 2px solid white;
+        background-color: rgb(87, 162, 33);
+        border-radius: 1rem;
+        gap: 1rem;
         box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
-      }
+        .login-intro-box {
+            position: relative;
+            height: 16rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            h4 {
+                animation: bounce 1s ease;
+            }
+        }
+        .divider {
+            background: rgb(78, 155, 23);
+            height: 13rem;
+            width: 3px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            gap: 5px;
+            h5 {
+                animation: bounce 1.5s ease;
+            }
+            .form-title {
+                margin-bottom: 5px;
+            }
+            .login-name {
+                height: 2rem;
+                width: 11rem;
+                border: 2px solid black;
+                border-radius: 5px;
+                padding: 10px;
+                font-size: medium;
+            }
+            .login-name::placeholder {
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+                    sans-serif;
+                font-size: medium;
+            }
+            button {
+                // background: green;
+                background: rgb(4, 114, 32);
+                background: linear-gradient(
+                    90deg,
+                    rgba(4, 114, 32, 1) 17%,
+                    rgba(41, 188, 3, 1) 88%
+                );
+
+                width: 11rem;
+                font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+                    sans-serif;
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                transition: all 0.1s ease-in-out;
+                &:hover {
+                    color: linear-gradient(
+                        90deg,
+                        rgba(4, 114, 32, 1) 17%,
+                        rgba(41, 188, 3, 1) 88%
+                    );
+                    background-color: white;
+                    cursor: pointer;
+                    border-color: green;
+                    scale: 105%;
+                    box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
+                }
+            }
+        }
     }
-  }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
 }
