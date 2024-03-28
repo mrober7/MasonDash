@@ -13,19 +13,21 @@
                      <td class="courses-section">
                         {{#each finishedcourses}}
                             <div class="pill">
-                                <div class="pill-text">{{this.id}}</div>
+                                <div class="pill-text">{{this}}</div>
                             </div>
                         {{/each}}
                     </td>
                     <td class="courses-section">
-                        <div class="pill-text">CS321</div>
-                        <div class="pill-text">CS367</div>
-                        <div class="pill-text">CS483</div>
+                        {{#each courses}}
+                            <div class="pill">
+                                <div class="pill-text">{{this}}</div>
+                            </div>
+                        {{/each}}
                     </td>
                     <td class="courses-section">
                         {{#each futurecourses}}
                             <div class="pill">
-                                <div class="pill-text">{{this.courseName}}</div>
+                                <div class="pill-text">{{this}}</div>
                             </div>
                         {{/each}}
                     </td>
