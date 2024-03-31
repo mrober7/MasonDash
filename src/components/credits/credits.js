@@ -56,6 +56,10 @@ const credits = {
     async _loadData() {
         // fetch information about the current student info to display in pills
         let courses = await this._getCourses('courses');
+        for (let course of courses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
         let finishedcourses = await this._getCourses('finishedcourses');
         let futurecourses = await this._getCourses('futurecourses');
         let pillHtml = template({
@@ -65,7 +69,7 @@ const credits = {
             futurecourses
         });
         this.element
-            .querySelector(`.pills`)
+            .querySelector(`.courses-table tbody`)
             .insertAdjacentHTML("beforeend", pillHtml);
     },
 };

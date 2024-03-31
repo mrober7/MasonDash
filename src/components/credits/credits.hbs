@@ -9,30 +9,34 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                     <td class="courses-section">
-                        {{#each finishedcourses}}
-                            <div class="pill">
-                                <div class="pill-text">{{this}}</div>
-                            </div>
-                        {{/each}}
-                    </td>
-                    <td class="courses-section">
-                        {{#each courses}}
-                            <div class="pill">
-                                <div class="pill-text">{{this}}</div>
-                            </div>
-                        {{/each}}
-                    </td>
-                    <td class="courses-section">
-                        {{#each futurecourses}}
-                            <div class="pill">
-                                <div class="pill-text">{{this}}</div>
-                            </div>
-                        {{/each}}
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
+{{/if}}
+
+{{#if pill}}
+    <tr>
+        <td class="courses-section">
+            {{#each finishedcourses}}
+                <div class="pill">
+                    <div class="pill-text">{{this.courseId}}</div>
+                </div>
+            {{/each}}
+        </td>
+        <td class="courses-section">
+            {{#each courses}}
+                <div class="pill">
+                    <div class="pill-text">{{this.courseId}}</div>
+                </div>
+            {{/each}}
+        </td>
+        <td class="courses-section">
+            {{#each futurecourses}}
+                <div class="pill">
+                    <div class="pill-text">{{this.courseId}}</div>
+                </div>
+            {{/each}}
+        </td>
+    </tr>
 {{/if}}
