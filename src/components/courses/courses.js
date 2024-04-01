@@ -115,6 +115,11 @@ const courses = {
                 });
                 popover.querySelector('.pop-body').innerHTML = popHtml;
                 popover.showPopover();
+
+                const closeButton = popover.querySelector('.pop-footer button');
+                closeButton.addEventListener('click', () => {
+                    popover.hidePopover();
+                });
             });
         });
     },
