@@ -61,7 +61,15 @@ const credits = {
             course.courseId = courseId;
         }
         let finishedcourses = await this._getCourses('finishedcourses');
+        for (let course of finishedcourses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
         let futurecourses = await this._getCourses('futurecourses');
+        for (let course of futurecourses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
         let pillHtml = template({
             pill: true,
             courses,
