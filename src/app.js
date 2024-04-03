@@ -11,7 +11,8 @@ import info from "components/info/info";
 import future from "components/future/future";
 // import credits component to render data for in layout
 import credits from "components/credits/credits";
-
+// import map component to render data for in layout
+import map from "components/map/map";
 const app = {
     // initialize function for index module
     async init() {
@@ -25,8 +26,10 @@ const app = {
         await info.init();
         // initialize the future component to load data
         await future.init();
-        // initialize the courses component to load data
+        // initialize the credits component to load data
         await credits.init();
+        // initialize the map component to load data
+        await map.init();
     },
 };
 
