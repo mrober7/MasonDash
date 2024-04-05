@@ -1,8 +1,8 @@
 // layout.js file that handles dashboard layout functionality
 // import html from layout.hbs to display custom data in using innerHTML
-import template from './layout.hbs';
+import template from "./layout.hbs";
 // import layout scss file to style and display the layout on the dashboard
-import './layout.scss';
+import "./layout.scss";
 
 const layout = {
     // initialization function for the layout object
@@ -15,46 +15,55 @@ const layout = {
     // private method to render the layout component on the page
     _renderLayout() {
         // store body element to render the layout
-        this.element = document.querySelector('body');
+        this.element = document.querySelector("body");
         // set the inner HTML of the body element to the Handlebars template
         this.element.innerHTML = template();
     },
 
     // private method to bind event listeners for the layout
     _bindListeners() {
-        // select all elements with the class 'header-link' in the layout
-        let links = document.querySelectorAll('.header-link');
-
-        // add a click event listener to each header link
-        links.forEach((link) => {
-            link.addEventListener('click', (e) => {
-                // get the data-action attribute value from the clicked link
-                let strAction = e.target.getAttribute('data-action');
+        // delegate click event listener to each header link
+        let header = document.querySelector(".header");
+        header.addEventListener("click", (e) => {
+            let target = e.target;
+            if (target.classList.contains("header-link")) {
+                let strAction = target.dataset.action;
                 // check if the action is exit
-                if (strAction === 'exit') {
+                if (strAction === "exit") {
                     // remove the mason-user from local storage
-                    localStorage.removeItem('mason-user');
+                    localStorage.removeItem("mason-user");
                     // redirect to the login.html page after user exits
-                    top.location = 'login.html';
+                    top.location = "login.html";
                 }
-            });
+            }
         });
 
-        // select all elements with the class 'item' in the section
-        let titles = document.querySelectorAll('.item-title');
-        // add a click event listener to each item title
-        titles.forEach((title) => {
-            title.addEventListener('click', (e) => {
-                // get the data-action attribute value from the clicked link
-                let item = e.target.closest('.item');
-                let strState = item.getAttribute('data-state');
-                // check if the action is exit
-                if (strState === 'open') {
-                    item.setAttribute('data-state', 'close');
+        // delegate click event listener to each section title
+        let section = document.querySelector(".section");
+        section.addEventListener("click", (e) => {
+            let target = e.target;
+
+            if (target.classList.contains("item-title")) {
+                let item = target.closest(".item");
+                // close all items
+                this._closeAllItems(item);
+
+                let strState = item.getAttribute("data-state") || "";
+                if (strState === "close" || strState === "") {
+                    item.dataset.state = "open";
                 } else {
-                    item.setAttribute('data-state', 'open');
+                    item.dataset.state = "close";
                 }
-            });
+            }
+        });
+    },
+
+    _closeAllItems(target) {
+        let items = document.querySelectorAll(".item");
+        items.forEach((item) => {
+            console.log(item.dataset)
+            if (item.dataset.type === target.dataset.type) return;
+            item.setAttribute("data-state", "close");
         });
     },
 };

@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: center;
         // border: 2px solid white;
-        background-color: rgb(87, 162, 33);
+        background-color: var(--mason-section-light-green);
         border-radius: 1rem;
         gap: 1rem;
         box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
@@ -35,7 +35,7 @@
             }
         }
         .divider {
-            background: rgb(78, 155, 23);
+            background: var(--mason-section-green);
             height: 13rem;
             width: 3px;
         }
@@ -66,11 +66,11 @@
             }
             button {
                 // background: green;
-                background: rgb(4, 114, 32);
+                background: var(--mason-section-dark-green);
                 background: linear-gradient(
                     90deg,
-                    rgba(4, 114, 32, 1) 17%,
-                    rgba(41, 188, 3, 1) 88%
+                    var(--mason-section-light-green) 17%,
+                    var(--mason-section-green)88%
                 );
 
                 width: 11rem;
@@ -81,14 +81,8 @@
                 color: white;
                 transition: all 0.1s ease-in-out;
                 &:hover {
-                    color: linear-gradient(
-                        90deg,
-                        rgba(4, 114, 32, 1) 17%,
-                        rgba(41, 188, 3, 1) 88%
-                    );
                     background-color: white;
                     cursor: pointer;
-                    border-color: green;
                     scale: 105%;
                     box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
                 }

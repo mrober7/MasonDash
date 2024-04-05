@@ -1,5 +1,5 @@
 {{#if main}}
-    <div class="pills">
+    <div class="columns">
         <table class="courses-table">
             <thead>
                 <tr>
@@ -19,22 +19,22 @@
     <tr>
         <td class="courses-section">
             {{#each finishedcourses}}
-                <div class="pill">
-                    <div class="pill-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
+                <div class="column">
+                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
                 </div>
             {{/each}}
         </td>
         <td class="courses-section">
             {{#each courses}}
-                <div class="pill">
-                    <div class="pill-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
+                <div class="column">
+                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
                 </div>
             {{/each}}
         </td>
         <td class="courses-section">
             {{#each futurecourses}}
-                <div class="pill">
-                    <div class="pill-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
+                <div class="column">
+                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
                 </div>
             {{/each}}
         </td>
