@@ -24,6 +24,7 @@ const map = {
         this.element.querySelector(".item-body").innerHTML = mainHtml;
         this.mapImage = this.element.querySelector(".map-image img");
         this.mapView = this.element.querySelector(".map-view img");
+        this.mapHighlight = this.element.querySelector(".map-image .map-highlight")
     },
 
     _loadBuildings() {
@@ -49,14 +50,21 @@ const map = {
         selectControl.addEventListener("change", (e) => {
             let selectedIndex = selectControl.selectedIndex;
             let buildingId = selectControl.options[selectedIndex].value;
-            if (!buildingId) return;
-            
+            if (!buildingId) {
+                this.mapImage.style.top = '-290px';
+                this.mapImage.style.left = '-80px';
+                this.mapImage.style.scale = '0.9';
+                this.mapView.setAttribute('src', '');
+                return;
+            }
+
             let building = buildingsData.filter((row) => {
                 return row.id === buildingId;
             })[0];
             this.mapImage.style.top = building.y + 'px';
             this.mapImage.style.left = building.x + 'px';
-            this.mapView.setAttribute('src', `./images/${buildingId}.jpg`);
+            this.mapImage.style.scale = building.scale;
+            this.mapView.setAttribute('src', `./images/${buildingId}.jpeg`);
         });
     },
 };

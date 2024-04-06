@@ -1,160 +1,150 @@
 .section {
-    .item {
-        &.courses {
-            .week {
-                display: flex;
-                flex-direction: row;
+  .item {
+    &.courses {
+      .week {
+        display: flex;
+        flex-direction: row;
 
-                .time {
-                    .time-title {
-                        background: var(--mason-section-green);
-                        padding: 5px;
-                    }
+        .time {
+          .time-title {
+            background: var(--mason-section-green);
+            padding: 5px;
+          }
 
-                    .time-event {
-                        display: flex;
-                        height: 40px;
-                        width: 100px;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: var(--mason-section-green);
-                        border-top: 1px solid rgb(0, 0, 0);
-                        border-right: 1px solid rgb(0, 0, 0);
-                    }
-                }
-
-                .day {
-                    border-right: 1px solid var(--mason-section-gray);
-                    flex: 1;
-                    position: relative;
-
-                    .day-title {
-                        background: var(--mason-section-green);
-                        border-right: none;
-                        padding: 5px;
-                    }
-
-                    .day-events {
-                        position: relative;
-
-                        .day-event {
-                            background-color: var(--mason-section-light-purple);
-                            position: absolute;
-                            padding: 5px;
-                            left: 0px;
-                            width: 100%;
-
-                            &:hover {
-                                cursor: pointer;
-                                &:before {
-                                    content: attr(start);
-                                    position: absolute;
-                                    top: -12px;
-                                    right: 2px;
-                                    font-size: 60%;
-                                    width: 50px;
-                                    text-align: right;
-                                }
-                                &:after {
-                                    content: attr(end);
-                                    position: absolute;
-                                    bottom: -12px;
-                                    right: 2px;
-                                    font-size: 60%;
-                                    width: 50px;
-                                    text-align: right;
-                                }
-                            }
-                            &.CS321-002 {
-                                background-color: var(
-                                    --mason-section-light-blue
-                                );
-                            }
-                            &.CS330-005 {
-                                background-color: var(
-                                    --mason-section-light-purple
-                                );
-                            }
-                            &.CS330-001 {
-                                background-color: var(
-                                    --mason-section-dark-blue
-                                );
-                            }
-                            &.CS262-003 {
-                                background-color: var(
-                                    --mason-section-dark-purple
-                                );
-                            }
-                            &.CS306-001 {
-                                background-color: var(
-                                    --mason-section-light-pink
-                                );
-                            }
-                            &.CS367-004 {
-                                background-color: var(
-                                    --mason-section-dark-pink
-                                );
-                            }
-                            &.CS471-001 {
-                                background-color: var(
-                                    --mason-section-light-orange
-                                );
-                            }
-                            &.CS367-003 {
-                                background-color: var(
-                                    --mason-section-dark-orange
-                                );
-                            }
-                            &.CS483-002 {
-                                background-color: #5f9ea0;
-                            }
-                            &.CS367-001 {
-                                background-color: #bc8f8f;
-                            }
-                        }
-                    }
-
-                    /* horizontal gridlines for each hour */
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        top: -9px; /* aligning for each hour (i know, it's scuffed) */
-                        left: 0;
-                        right: 0;
-                        height: 100%;
-                        background-image: repeating-linear-gradient(to bottom, transparent, transparent 39px, rgb(0, 0, 0) 39px, rgb(0, 0, 0) 40px); /* Repeat every 40 pixels */
-                        pointer-events: none; /* allow clicks to go through */
-                    }
-                }
-            }
-
-            [popover] {
-                margin: auto;
-                width: 300px;
-                height: 400px;
-                border: none;
-                border-radius: 5px;
-                box-shadow: 0px 0px 3px #fff;
-                .pop-main {
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    .pop-header {
-                        padding: 10px;
-                        background-color: var(--mason-section-green);
-                        color: #fff;
-                    }
-                    .pop-body {
-                        padding: 10px;
-                        flex: 1;
-                    }
-
-                    .pop-footer {
-                        background-color: var(--mason-section-dark-gray);
-                        padding: 10px;
-                    }
-                }
-            }
+          .time-event {
+            display: flex;
+            height: 40px;
+            width: 100px;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--mason-section-green);
+            border-top: 1px solid rgb(0, 0, 0);
+            border-right: 1px solid rgb(0, 0, 0);
+          }
         }
+
+        .day {
+          border-right: 1px solid var(--mason-section-gray);
+          flex: 1;
+          position: relative;
+
+          .day-title {
+            background: var(--mason-section-green);
+            border-right: none;
+            padding: 5px;
+          }
+
+          .day-events {
+            position: relative;
+
+            .day-event {
+              background-color: var(--mason-section-light-purple);
+              position: absolute;
+              padding: 5px;
+              left: 0px;
+              width: 100%;
+
+              &:hover {
+                cursor: pointer;
+                &:before {
+                  content: attr(start);
+                  position: absolute;
+                  top: -12px;
+                  right: 2px;
+                  font-size: 60%;
+                  width: 50px;
+                  text-align: right;
+                }
+                &:after {
+                  content: attr(end);
+                  position: absolute;
+                  bottom: -12px;
+                  right: 2px;
+                  font-size: 60%;
+                  width: 50px;
+                  text-align: right;
+                }
+              }
+              &.CS321-002 {
+                background-color: var(--mason-section-light-blue);
+              }
+              &.CS330-005 {
+                background-color: var(--mason-section-light-purple);
+              }
+              &.CS330-001 {
+                background-color: var(--mason-section-dark-blue);
+              }
+              &.CS262-003 {
+                background-color: var(--mason-section-dark-purple);
+              }
+              &.CS306-001 {
+                background-color: var(--mason-section-light-pink);
+              }
+              &.CS367-004 {
+                background-color: var(--mason-section-dark-pink);
+              }
+              &.CS471-001 {
+                background-color: var(--mason-section-light-orange);
+              }
+              &.CS367-003 {
+                background-color: var(--mason-section-dark-orange);
+              }
+              &.CS483-002 {
+                background-color: #5f9ea0;
+              }
+              &.CS367-001 {
+                background-color: #bc8f8f;
+              }
+            }
+          }
+
+          /* horizontal gridlines for each hour */
+          &::before {
+            content: "";
+            position: absolute;
+            top: -9px; /* aligning for each hour (i know, it's scuffed) */
+            left: 0;
+            right: 0;
+            height: 100%;
+            background-image: repeating-linear-gradient(
+              to bottom,
+              transparent,
+              transparent 39px,
+              rgb(0, 0, 0) 39px,
+              rgb(0, 0, 0) 40px
+            ); /* Repeat every 40 pixels */
+            pointer-events: none; /* allow clicks to go through */
+          }
+        }
+      }
+
+      [popover] {
+        margin: auto;
+        width: 350px;
+        height: 300px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 0px 3px #fff;
+        .pop-main {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          .pop-header {
+            padding: 10px;
+            background-color: var(--mason-section-green);
+            color: #fff;
+          }
+          .pop-body {
+            padding: 10px;
+            flex: 1;
+          }
+
+          .pop-footer {
+            background-color: var(--mason-section-dark-gray);
+            padding: 10px;
+          }
+        }
+      }
     }
+  }
 }
