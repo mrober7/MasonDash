@@ -1,34 +1,56 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --mason-section-gray: #484848;
-  --mason-section-dark-gray: #282828;
-  --mason-section-light-gray: #707070;
-  --mason-section-light-green: #008000;
-  --mason-section-green: #005000;
-  --mason-section-dark-green: #003000;
-  --mason-section-light-blue: #6495ed;
-  --mason-section-dark-blue: #008b8b;
-  --mason-section-light-purple: #9370db;
-  --mason-section-dark-purple: #663399;
-  --mason-section-light-orange: #f4a460;
-  --mason-section-dark-orange: #df8900;
-  --mason-section-dark-pink: #db7093;
-  --mason-section-light-pink: #ffb6c1;
+    --mason-section-gray: #484848;
+    --mason-section-dark-gray: #282828;
+    --mason-section-light-gray: #707070;
+    --mason-section-light-green: #008000;
+    --mason-section-green: #005000;
+    --mason-section-dark-green: #003000;
+
+    --mason-course-light-blue: #6495ed;
+    --mason-course-dark-blue: #008b8b;
+    --mason-course-light-purple: #9370db;
+    --mason-course-dark-purple: #663399;
+    --mason-course-light-orange: #f4a460;
+    --mason-course-dark-orange: #df8900;
+    --mason-course-dark-pink: #db7093;
+    --mason-course-light-pink: #ffb6c1;
+    --mason-course-light-teal: #5f9ea0;
+    --mason-course-light-salmon: #bc8f8f;
 }
 
 html,
 body {
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  font-family: Cambria, serif;
-  font-size: 1.2rem;
-  background: var(--mason-section-dark-gray);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, serif;
+    font-size: 1.2rem;
+    background: var(--mason-section-dark-gray);
+}
+
+body {
+    &[data-theme="default"] {
+        --mason-section-gray: #484848;
+        --mason-section-dark-gray: #282828;
+        --mason-section-light-gray: #707070;
+        --mason-section-light-green: #008000;
+        --mason-section-green: #005000;
+        --mason-section-dark-green: #003000;
+    }
+    &[data-theme="pink"] {
+        --mason-section-gray: #e94242;
+        --mason-section-dark-gray: #dd2929;
+        --mason-section-light-gray: #c84949;
+        --mason-section-light-green: #2c3bc9;
+        --mason-section-green: #030050;
+        --mason-section-dark-green: #010009;
+    }
 }

@@ -30,9 +30,16 @@ const future = {
         let mainHtml = template({
             main: true,
         });
-
         // set the inner HTML of the selected element to the generated HTML
         this.element.querySelector(".item-body").innerHTML = mainHtml;
+
+        // generate the HTML using the Handlebars template with dialog as true
+        let dialogHtml = template({
+            dialog: true,
+        });
+        // set the inner HTML of the selected element to the generated HTML
+        this.element.insertAdjacentHTML("beforeend", dialogHtml);
+        this.dialog = this.element.querySelector('#future-dialog');
     },
 
     // private method to load data asynchronously for the future component
@@ -88,28 +95,15 @@ const future = {
                 let dayElement = this.element.querySelector(
                     `.day.${key.toLowerCase()}`
                 );
-                let popOverId = `${key.toLowerCase()}-${course.id}`;
                 let html = `<div
                             class='day-event ${course.id}'
                             style='top: ${startPos}px;height: ${height}px;'
                             start='${start}' end='${end}'
-                            popoverid='${popOverId}'
+                            courseid='${course.id}'
                             >${courseId}</div>`;
                 dayElement
                     .querySelector(`.day-events`)
                     .insertAdjacentHTML("beforeend", html);
-
-                let popOverHtml = `
-                            <div popover id='${popOverId}'>
-                                <div class='pop-main'>
-                                    <div class='pop-header'>${courseId}</div>
-                                    <div class='pop-body'></div>
-                                    <div class='pop-footer'>
-                                        <button>Close</button>
-                                    </div>
-                                </div>
-                                </div>`;
-                this.element.insertAdjacentHTML("beforeend", popOverHtml);
             }
         });
     },
@@ -124,6 +118,34 @@ const future = {
             let courseId = selectControl.options[selectedIndex].value;
             if (courseId) {
                 this._renderCourse(courseId);
+            }
+        });
+
+        // select all elements with the class 'header-link' in the layout
+        let events = this.element.querySelectorAll('.day-event');
+
+        // add a click event for elements with day-event class
+        this.element.addEventListener("click", (e) => {
+            let target = e.target;
+            if (target.classList.contains("day-event")) {
+                // get the dialogtarget attribute value from the clicked link
+                let courseId = e.target.getAttribute('courseid');
+                let courseData = this.matchedCourses.filter((row) => {
+                    return row.id.includes(courseId);
+                })[0];
+                //inject data into dialog 
+                let dialogHtml = template({
+                    dialogcontent: true,
+                    data: courseData,
+                });
+                this.dialog.querySelector(".dialog-body").innerHTML = dialogHtml;
+                this.dialog.querySelector(".dialog-header").innerHTML = courseData.id;
+                this.dialog.showModal();
+
+                const closeButton = this.dialog.querySelector(".dialog-footer button");
+                closeButton.addEventListener("click", () => {
+                    this.dialog.close();
+                });
             }
         });
     },

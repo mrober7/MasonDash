@@ -7,11 +7,28 @@ import "./layout.scss";
 const layout = {
     // initialization function for the layout object
     init() {
+        this._getTheme();
         // call layout method that renders layout component
         this._renderLayout();
         // call layout method that binds event listeners
         this._bindListeners();
+        //default open courses
+        let coursesItem = this.element.querySelector(
+            ".item.courses .item-title"
+        );
+        coursesItem.click();
     },
+
+    _getTheme() {
+        let theme = localStorage.getItem("mason-theme") || 'default';
+        document.body.dataset.theme = theme;
+    },
+
+    _setTheme(theme) {
+        document.body.dataset.theme = theme;
+        localStorage.setItem("mason-theme", theme);
+    },
+
     // private method to render the layout component on the page
     _renderLayout() {
         // store body element to render the layout
@@ -40,7 +57,7 @@ const layout = {
 
         // delegate click event listener to each section title
         let section = document.querySelector(".section");
-        section.addEventListener("click", (e) => {
+        section.addEventListener("click", async (e) => {
             let target = e.target;
 
             if (target.classList.contains("item-title")) {
@@ -48,20 +65,34 @@ const layout = {
                 // close all items
                 this._closeAllItems(item);
 
+                let strType = item.getAttribute("data-type");
                 let strState = item.getAttribute("data-state") || "";
                 if (strState === "close" || strState === "") {
                     item.dataset.state = "open";
+                    // dynamically import requested module
+                    let importModule = await import(
+                        `components/${strType}/${strType}.js`
+                    );
+                    let module = importModule.default;
+                    module.init();
                 } else {
                     item.dataset.state = "close";
                 }
             }
+        });
+
+        // select all elements with the class 'header-link' in the layout
+        let selectControl = this.element.querySelector("select");
+        selectControl.addEventListener("change", (e) => {
+            let selectedIndex = selectControl.selectedIndex;
+            let theme = selectControl.options[selectedIndex].value;
+            this._setTheme(theme);
         });
     },
 
     _closeAllItems(target) {
         let items = document.querySelectorAll(".item");
         items.forEach((item) => {
-            console.log(item.dataset)
             if (item.dataset.type === target.dataset.type) return;
             item.setAttribute("data-state", "close");
         });

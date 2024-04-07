@@ -44,7 +44,6 @@ const map = {
     },
 
     _bindListeners() {
-        // select all elements with the class 'header-link' in the layout
         let selectControl = this.element.querySelector(".item-controls select");
 
         selectControl.addEventListener("change", (e) => {

@@ -42,10 +42,22 @@
     <div class="courses"></div>
 {{/if}}
 
-{{#if popover}}
+{{#if dialog}}
+<dialog id="future-dialog">
+    <div class="dialog-main">
+        <div class="dialog-header">Header</div>
+        <div class="dialog-body"></div>
+        <div class="dialog-footer">
+            <button>Close</button>
+        </div>
+    </div>
+</dialog>
+{{/if}}
+
+{{#if dialogcontent}}
     <div>ID: {{data.id}}</div>
     <div>Course Name: {{data.name}}</div>
-    <div>Location:{{data.location}}</div>
+    <div>Location: {{data.location}}</div>
     <div>Room: {{data.room}}</div>
     <div>Professor: {{data.professor}}</div>
     <div>Credits: {{data.credits}}</div>
