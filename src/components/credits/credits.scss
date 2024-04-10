@@ -11,15 +11,15 @@
           th,
           td {
             padding: 10px;
-            border: 1px solid #ffffff;
+            border: 1px solid var(--mason-section-accent2);
           }
           /* background color for headers */
           th {
-            background-color: var(--mason-section-green);
+            background-color: var(--mason-section-accent2);
           }
           /* Background color for rows */
           td {
-            background-color: var(--mason-section-light-green);
+            background-color: var(--mason-section-background3);
             vertical-align: top;
           }
 
@@ -37,8 +37,8 @@
 
               .column-text {
                 flex: 1;
-                padding: 2px 10px;
-                background-color: var(--mason-section-light-green);
+                padding: 5px 10px;
+                background-color: var(--mason-section-accent1);
                 border-radius: 0 2px 2px 0;
               }
             }

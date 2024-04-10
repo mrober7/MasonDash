@@ -7,7 +7,7 @@
 
                 .time {
                     .time-title {
-                        background: var(--mason-section-green);
+                        background: var(--mason-section-accent2);
                         padding: 5px;
                     }
 
@@ -17,19 +17,19 @@
                         width: 100px;
                         align-items: center;
                         justify-content: center;
-                        background-color: var(--mason-section-green);
+                        background-color: var(--mason-section-accent2);
                         border-top: 1px solid rgb(0, 0, 0);
                         border-right: 1px solid rgb(0, 0, 0);
                     }
                 }
 
                 .day {
-                    border-right: 1px solid var(--mason-section-gray);
+                    border-right: 1px solid var(--mason-section-background1);
                     flex: 1;
                     position: relative;
 
                     .day-title {
-                        background: var(--mason-section-green);
+                        background: var(--mason-section-accent2);
                         border-right: none;
                         padding: 5px;
                     }
@@ -147,7 +147,7 @@
                     flex-direction: column;
                     .dialog-header {
                         padding: 10px;
-                        background-color: var(--mason-section-green);
+                        background-color: var(--mason-section-accent2);
                         color: #fff;
                     }
                     .dialog-body {
@@ -156,13 +156,13 @@
                     }
 
                     .dialog-footer {
-                        background-color: var(--mason-section-dark-gray);
+                        background-color: var(--mason-section-background2);
                         padding: 10px;
                     }
                 }
 
                 &::backdrop {
-                    background-color: var(--mason-section-green);
+                    background-color: var(--mason-section-accent2);
                     opacity: 0.3;
                 }
             }

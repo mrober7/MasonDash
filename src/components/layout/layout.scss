@@ -18,7 +18,7 @@
     .header-title {
       padding: 0 10px;
       font-weight: bold;
-      color: white;
+      color: var(--mason-section-head-text);
     }
   }
   .header-user {
@@ -32,8 +32,8 @@
     border-radius: 6px;
     transition: all 0.1s ease;
     &:hover {
-      background-color: var(--mason-section-light-green);
-      border: white solid 2px;
+      background-color: var(--mason-section-accent1);
+      border: var(--mason-section-head-text) solid 2px;
     }
 
     button {
@@ -54,8 +54,8 @@
   display: flex;
   flex-direction: row;
   justify-content: end;
-  border-top: 1px solid var(--mason-section-dark-gray);
-  color: white;
+  border-top: 1px solid var(--mason-section-background2);
+  color: var(--mason-section-head-text);
 }
 
 .section {
@@ -65,7 +65,7 @@
   overflow: auto;
 
   .item {
-    background-color: var(--mason-section-light-gray);
+    background-color: var(--mason-section-background3);
     border-radius: 5px;
     color: white;
     margin-bottom: 10px;
@@ -76,7 +76,7 @@
     .item-header {
       display: flex;
       flex-direction: row;
-      background-color: var(--mason-section-gray);
+      background-color: var(--mason-section-background1);
       padding: 5px;
 
       .item-title {
