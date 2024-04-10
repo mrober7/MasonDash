@@ -27,9 +27,16 @@ const courses = {
         let mainHtml = template({
             main: true,
         });
-
         // set the inner HTML of the selected element to the generated HTML
         this.element.querySelector(".item-body").innerHTML = mainHtml;
+
+        // generate the HTML using the Handlebars template with dialog as true
+        let dialogHtml = template({
+            dialog: true,
+        });
+        // set the inner HTML of the selected element to the generated HTML
+        this.element.insertAdjacentHTML("beforeend", dialogHtml);
+        this.dialog = this.element.querySelector('#courses-dialog');
     },
 
     // private method to load data asynchronously for the courses component
@@ -59,71 +66,55 @@ const courses = {
                 for (const [key, value] of Object.entries(day)) {
                     let start = value[0];
                     let end = value[1];
-                    let startPos = this._timeDiff(start)/1.5 //1.5 because of 60px height
-                    let endPos = this._timeDiff(end)/1.5; //1.5 because of 60px height
+                    let startPos = this._timeDiff(start) / 1.5; //1.5 because of 60px height
+                    let endPos = this._timeDiff(end) / 1.5; //1.5 because of 60px height
                     let height = endPos - startPos;
                     let dayElement = this.element.querySelector(
                         `.day.${key.toLowerCase()}`
                     );
-                    let popOverId = `${key.toLowerCase()}-${course.id}`;
                     let html = `<div  
                     class='day-event ${course.id}' 
                     style='top: ${startPos}px;height: ${height}px;' 
                     start='${start}' end='${end}'
-                    popoverid='${popOverId}' 
+                    courseid='${course.id}' 
                     >${courseId}</div>`;
                     dayElement
                         .querySelector(`.day-events`)
                         .insertAdjacentHTML("beforeend", html);
-
-                    let popOverHtml = `
-                    <div popover id='${popOverId}'>
-                        <div class='pop-main'>
-                            <div class='pop-header'>${courseId}</div>
-                            <div class='pop-body'></div>
-                            <div class='pop-footer'>
-                                <button>Close</button>
-                            </div>
-                        </div>
-                        </div>`;
-                    this.element.insertAdjacentHTML("beforeend", popOverHtml);
                 }
             });
         });
     },
 
-
     // private method to bind event listeners for the layout
     _bindListeners() {
-        // select all elements with the class 'header-link' in the layout
-        let events = this.element.querySelectorAll('.day-event');
 
-        // add a click event listener to each header link
-        events.forEach((event) => {
-            event.addEventListener('click', (e) => {
-                // get the popovertarget attribute value from the clicked link
-                let strPopOverId = e.target.getAttribute('popoverid');
-                const popover = document.getElementById(strPopOverId);
-                let courseId = strPopOverId.split('-')[1]
+        // add a click event for elements with day-event class
+        this.element.addEventListener("click", (e) => {
+            let target = e.target;
+            if (target.classList.contains("day-event")) {
+                // get the dialogtarget attribute value from the clicked link
+                let courseId = e.target.getAttribute('courseid');
                 let courseData = this.coursesData.filter((row) => {
                     return row.id.includes(courseId);
+                })[0];
+                //inject data into dialog 
+                let dialogHtml = template({
+                    dialogcontent: true,
+                    data: courseData,
                 });
-                //inject data into popover
-                let popHtml = template({
-                    popover: true,
-                    data: courseData[0]
-                });
-                popover.querySelector('.pop-body').innerHTML = popHtml;
-                popover.showPopover();
+                this.dialog.querySelector(".dialog-body").innerHTML = dialogHtml;
+                this.dialog.querySelector(".dialog-header").innerHTML = courseData.id;
+                this.dialog.showModal();
 
-                const closeButton = popover.querySelector('.pop-footer button');
-                closeButton.addEventListener('click', () => {
-                    popover.hidePopover();
+                const closeButton = this.dialog.querySelector(".dialog-footer button");
+                closeButton.addEventListener("click", () => {
+                    this.dialog.close();
                 });
-            });
+            }
         });
     },
-    
+
     _timeDiff(start) {
         const startTimeString = "8:00 AM";
         const endTimeString = start;

@@ -3,15 +3,10 @@ import cookieService from './cookieService';
 // import the aws module for AWS api configuration
 import aws from './aws';
 
-let studentData = null;
-
 // create a students service object to handle fetching students data
 const studentsService = {
     // async method to fetch the current user's student information
     async getMe() {
-        if (studentData) {
-            return studentData;
-        }
         // retrieve the 'mason-user' cookie value using 'cookieService'
         let user = await cookieService.get('mason-user');
         // construct the URL by combining the 'uri' from 'aws' module with the '/students' path and the user ID
@@ -19,7 +14,6 @@ const studentsService = {
         // parse the JSON data from the response
         let data = await response.json();
         // return the fetched student data
-        studentData = data;
         return data;
     },
 };

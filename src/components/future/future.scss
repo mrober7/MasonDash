@@ -67,49 +67,49 @@
                             }
                             &.CS321-002 {
                                 background-color: var(
-                                    --mason-section-light-blue
+                                    --mason-course-light-blue
                                 );
                             }
                             &.CS330-005 {
                                 background-color: var(
-                                    --mason-section-light-purple
+                                    --mason-course-light-purple
                                 );
                             }
                             &.CS330-001 {
-                                background-color: var(
-                                    --mason-section-dark-blue
-                                );
+                                background-color: var(--mason-course-dark-blue);
                             }
                             &.CS262-003 {
                                 background-color: var(
-                                    --mason-section-dark-purple
+                                    --mason-course-dark-purple
                                 );
                             }
                             &.CS306-001 {
                                 background-color: var(
-                                    --mason-section-light-pink
+                                    --mason-course-light-pink
                                 );
                             }
                             &.CS367-004 {
-                                background-color: var(
-                                    --mason-section-dark-pink
-                                );
+                                background-color: var(--mason-course-dark-pink);
                             }
                             &.CS471-001 {
                                 background-color: var(
-                                    --mason-section-light-orange
+                                    --mason-course-light-orange
                                 );
                             }
                             &.CS367-003 {
                                 background-color: var(
-                                    --mason-section-dark-orange
+                                    --mason-course-dark-orange
                                 );
                             }
                             &.CS483-002 {
-                                background-color: #5f9ea0;
+                                background-color: var(
+                                    --mason-course-light-teal
+                                );
                             }
                             &.CS367-001 {
-                                background-color: #bc8f8f;
+                                background-color: var(
+                                    --mason-course-light-salmon
+                                );
                             }
                         }
                     }
@@ -134,31 +134,36 @@
                 }
             }
 
-            [popover] {
+            dialog {
                 margin: auto;
-                width: 300px;
-                height: 400px;
+                width: 350px;
+                height: 300px;
                 border: none;
                 border-radius: 5px;
                 box-shadow: 0px 0px 3px #fff;
-                .pop-main {
+                .dialog-main {
                     height: 100%;
                     display: flex;
                     flex-direction: column;
-                    .pop-header {
+                    .dialog-header {
                         padding: 10px;
                         background-color: var(--mason-section-green);
                         color: #fff;
                     }
-                    .pop-body {
+                    .dialog-body {
                         padding: 10px;
                         flex: 1;
                     }
 
-                    .pop-footer {
+                    .dialog-footer {
                         background-color: var(--mason-section-dark-gray);
                         padding: 10px;
                     }
+                }
+
+                &::backdrop {
+                    background-color: var(--mason-section-green);
+                    opacity: 0.3;
                 }
             }
         }

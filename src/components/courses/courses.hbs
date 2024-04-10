@@ -41,7 +41,19 @@
     </div>
 {{/if}}
 
-{{#if popover}}
+{{#if dialog}}
+<dialog id="courses-dialog">
+    <div class="dialog-main">
+        <div class="dialog-header">Header</div>
+        <div class="dialog-body"></div>
+        <div class="dialog-footer">
+            <button>Close</button>
+        </div>
+    </div>
+</dialog>
+{{/if}}
+
+{{#if dialogcontent}}
     <div>ID: {{data.id}}</div>
     <div>Course Name: {{data.name}}</div>
     <div>Location: {{data.location}}</div>
