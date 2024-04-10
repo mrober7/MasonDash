@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--mason-section-dark-gray);
+  background-color: var(--mason-section-background2);
   .login-box {
     font-family: "Franklin Gothic Medium";
     height: 18rem;
@@ -14,7 +14,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: var(--mason-section-light-green);
+    background-color: var(--mason-section-accent1);
     border-radius: 1rem;
     gap: 1rem;
     box-shadow: 10px 10px 16px -7px rgba(0, 0, 0, 0.75);
@@ -35,7 +35,7 @@
       }
     }
     .divider {
-      background: var(--mason-section-green);
+      background: var(--mason-section-accent3);
       height: 13rem;
       width: 3px;
     }
@@ -66,8 +66,8 @@
       button {
         background: linear-gradient(
           90deg,
-          var(--mason-section-green) 45%,
-          var(--mason-section-dark-green) 85%
+          var(--mason-section-accent2) 15%,
+          var(--mason-section-accent3) 85%
         );
 
         width: 11rem;

@@ -26,14 +26,27 @@
     flex: 1;
     text-align: center;
   }
+
   .header-links {
     display: flex;
     padding: 5px;
-    border-radius: 6px;
-    transition: all 0.1s ease;
-    &:hover {
-      background-color: var(--mason-section-accent1);
-      border: var(--mason-section-head-text) solid 2px;
+
+    .select-theme {
+      background-color: var(--mason-section-background1);
+      color: var(--mason-section-head-text);
+      border-radius: 5px;
+      .select-theme-value {
+        padding: 5px;
+      }
+    }
+    .header-link {
+      margin-left: 10px;
+      // &:hover {
+      //   border-radius: 5px;
+      //   transition: all 0.1s ease;
+      //   background-color: var(--mason-section-accent1);
+      //   border: var(--mason-section-head-text) solid 2px;
+      // }
     }
 
     button {
