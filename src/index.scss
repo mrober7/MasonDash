@@ -33,24 +33,44 @@ body {
     flex-direction: column;
     font-family: Cambria, serif;
     font-size: 1.2rem;
-    background: var(--mason-section-dark-gray);
+    background: var(--mason-section-background2);
 }
 
 body {
-    &[data-theme="default"] {
-        --mason-section-gray: #484848;
-        --mason-section-dark-gray: #282828;
-        --mason-section-light-gray: #707070;
-        --mason-section-light-green: #008000;
-        --mason-section-green: #005000;
-        --mason-section-dark-green: #003000;
+    &[data-theme="dark"] {
+        --mason-section-background1: #484848;
+        --mason-section-background2: #282828;
+        --mason-section-background3: #707070;
+        --mason-section-accent1: #008000;
+        --mason-section-accent2: #005000;
+        --mason-section-accent3: #003000;
+        --mason-section-head-text: #ffffff;
     }
     &[data-theme="pink"] {
-        --mason-section-gray: #e94242;
-        --mason-section-dark-gray: #dd2929;
-        --mason-section-light-gray: #c84949;
-        --mason-section-light-green: #2c3bc9;
-        --mason-section-green: #030050;
-        --mason-section-dark-green: #010009;
+        --mason-section-background1: #e94242;
+        --mason-section-background2: #dd2929;
+        --mason-section-background3: #c84949;
+        --mason-section-accent1: #2c3bc9;
+        --mason-section-accent2: #030050;
+        --mason-section-accent3: #010009;
+        --mason-section-head-text: #ffffff;
+    }
+    &[data-theme="light"] {
+        --mason-section-background1: #e0ce31;
+        --mason-section-background2: #dfdfdf;
+        --mason-section-background3: #e0e0e0;
+        --mason-section-accent1: #008000;
+        --mason-section-accent2: #005000;
+        --mason-section-accent3: #003000;
+        --mason-section-head-text: #000000;
+    }
+    &[data-theme="night"] {
+        --mason-section-background1: #404076;
+        --mason-section-background2: #23234f;
+        --mason-section-background3: #696981;
+        --mason-section-accent1: #1a008b;
+        --mason-section-accent2: #004450;
+        --mason-section-accent3: #140033;
+        --mason-section-head-text: #ffffff;
     }
 }
