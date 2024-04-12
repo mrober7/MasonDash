@@ -65,4 +65,22 @@ body {
     --mason-section-accent3: #140033;
     --mason-section-head-text: #ffffff;
   }
+  &[data-theme="sea"] {
+    --mason-section-background1: #dab200;
+    --mason-section-background2: #00b1a8;
+    --mason-section-background3: #fde8a2;
+    --mason-section-accent1: #008060;
+    --mason-section-accent2: #005383;
+    --mason-section-accent3: #003000;
+    --mason-section-head-text: #ffffff;
+  }
+  &[data-theme="evil"] {
+    --mason-section-background1: #312727;
+    --mason-section-background2: #000000;
+    --mason-section-background3: #755a5a;
+    --mason-section-accent1: #800000;
+    --mason-section-accent2: #500000;
+    --mason-section-accent3: #300000;
+    --mason-section-head-text: #ffffff;
+  }
 }
