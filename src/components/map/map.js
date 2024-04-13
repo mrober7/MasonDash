@@ -5,6 +5,8 @@ import "./map.scss";
 
 import { buildingsData } from "./buildings";
 
+let buildingsLoaded = false;
+
 const map = {
     init() {
         this.element = document.querySelector(".item.map");
@@ -28,6 +30,10 @@ const map = {
     },
 
     _loadBuildings() {
+        if (buildingsLoaded) {
+            return;
+        }
+
         let selectControl = this.element.querySelector(".item-controls select");
         selectControl.insertAdjacentHTML(
             "beforeend",
@@ -41,6 +47,7 @@ const map = {
                 `<option value='${buildingId}'>${name}</option>`
             );
         });
+        buildingsLoaded = true;
     },
 
     _bindListeners() {

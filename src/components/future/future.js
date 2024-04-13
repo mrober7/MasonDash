@@ -8,6 +8,8 @@ import coursesService from "services/coursesService";
 // import studentsService that retrieves students data
 import studentsService from "services/studentsService";
 
+let coursesLoaded = false;
+
 const future = {
     // asynchronous initialization function for the future object
     async init() {
@@ -63,12 +65,26 @@ const future = {
         });
     },
 
+    _clearSelectOptions() {
+        let selectControl = this.element.querySelector(".item-controls select");
+        selectControl.innerHTML = "";
+        selectControl.insertAdjacentHTML(
+            "beforeend",
+            `<option value=''>Add Course</option>`
+        );
+    },
+
     _loadCourses() {
+        if (coursesLoaded) {
+            return;
+        }
+
         let selectControl = this.element.querySelector(".item-controls select");
         selectControl.insertAdjacentHTML(
             "beforeend",
             `<option value=''>Add Course</option>`
         );
+
         this.matchedCourses.forEach((course) => {
             let courseId = course.id.split("-")[0];
             selectControl.insertAdjacentHTML(
@@ -76,6 +92,8 @@ const future = {
                 `<option value='${courseId}'>${courseId}</option>`
             );
         });
+
+        coursesLoaded = true;
     },
 
     _renderCourse(courseId) {
