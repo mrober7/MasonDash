@@ -5,8 +5,10 @@ import template from "./layout.hbs";
 import "./layout.scss";
 
 const layout = {
+    theme: 'default',
     // initialization function for the layout object
     init() {
+
         this._getTheme();
         // call layout method that renders layout component
         this._renderLayout();
@@ -20,8 +22,8 @@ const layout = {
     },
 
     _getTheme() {
-        let theme = localStorage.getItem("mason-theme") || 'default';
-        document.body.dataset.theme = theme;
+        this.theme = localStorage.getItem("mason-theme") || this.theme;
+        document.body.dataset.theme = this.theme;
     },
 
     _setTheme(theme) {
@@ -35,6 +37,10 @@ const layout = {
         this.element = document.querySelector("body");
         // set the inner HTML of the body element to the Handlebars template
         this.element.innerHTML = template();
+        // select theme dropdown element with the class 'select-theme' in the layout
+        this.themeControl = this.element.querySelector("select.select-theme");
+
+        this.themeControl.value = this.theme;
     },
 
     // private method to bind event listeners for the layout
@@ -81,11 +87,9 @@ const layout = {
             }
         });
 
-        // select all elements with the class 'header-link' in the layout
-        let selectControl = this.element.querySelector("select");
-        selectControl.addEventListener("change", (e) => {
-            let selectedIndex = selectControl.selectedIndex;
-            let theme = selectControl.options[selectedIndex].value;
+        this.themeControl.addEventListener("change", (e) => {
+            let selectedIndex = this.themeControl.selectedIndex;
+            let theme = this.themeControl.options[selectedIndex].value;
             this._setTheme(theme);
         });
     },
