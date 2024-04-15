@@ -24,9 +24,9 @@
           }
         }
       }
-      @media (max-width: 1060px) {
+      @media (max-width: 1180px) {
         .pills {
-            display: inline-block;
+            flex-direction: column;
         }
       }
     }
