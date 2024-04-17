@@ -20,14 +20,33 @@ const credits = {
     },
 
     // private method to render the layout of the info component
-    _renderLayout() {
-        // generate the HTML using the Handlebars template with main as true
+    async _renderLayout() {
+        let courses = await this._getCourses('courses');
+        for (let course of courses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
+        let finishedcourses = await this._getCourses('finishedcourses');
+        for (let course of finishedcourses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
+        let futurecourses = await this._getCourses('futurecourses');
+        for (let course of futurecourses) {
+            let courseId = course.id.split("-")[0];
+            course.courseId = courseId;
+        }
+
         let mainHtml = template({
             main: true,
+            courses,
+            finishedcourses,
+            futurecourses
         });
 
         // set the inner HTML of the selected element to the generated HTML
         this.element.querySelector(".item-body").innerHTML = mainHtml;
+        this.element.querySelector('.course').insertAdjacentHTML("beforeend", pillHtml);
     },
 
     // private method to load data asynchronously for the courses component
@@ -50,35 +69,6 @@ const credits = {
         });
 
         return matchedCourses;
-    },
-
-    // private method to load data asynchronously for the info component
-    async _loadData() {
-        // fetch information about the current student info to display in pills
-        let courses = await this._getCourses('courses');
-        for (let course of courses) {
-            let courseId = course.id.split("-")[0];
-            course.courseId = courseId;
-        }
-        let finishedcourses = await this._getCourses('finishedcourses');
-        for (let course of finishedcourses) {
-            let courseId = course.id.split("-")[0];
-            course.courseId = courseId;
-        }
-        let futurecourses = await this._getCourses('futurecourses');
-        for (let course of futurecourses) {
-            let courseId = course.id.split("-")[0];
-            course.courseId = courseId;
-        }
-        let pillHtml = template({
-            pill: true,
-            courses,
-            finishedcourses,
-            futurecourses
-        });
-        this.element
-            .querySelector(`.courses-table tbody`)
-            .insertAdjacentHTML("beforeend", pillHtml);
     },
 };
 // export info object to make it available for other modules to use

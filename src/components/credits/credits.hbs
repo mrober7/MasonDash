@@ -1,42 +1,31 @@
 {{#if main}}
-    <div class="columns">
-        <table class="courses-table">
-            <thead>
-                <tr>
-                    <th>Finished Courses</th>
-                    <th>Current Courses</th>
-                    <th>Future Courses</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+  <div id="wrapper">
+    <div class="column">
+      <div class="course-header">Finished Courses</div>
+      {{#each finishedcourses}}
+        <div class="course">
+          <div class="course-details">{{this.courseId}}—{{this.name}}</div>
+          <div class="credits">{{this.credits}}</div>
+        </div>
+      {{/each}}
     </div>
-{{/if}}
-
-{{#if pill}}
-    <tr>
-        <td class="courses-section">
-            {{#each finishedcourses}}
-                <div class="column">
-                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
-                </div>
-            {{/each}}
-        </td>
-        <td class="courses-section">
-            {{#each courses}}
-                <div class="column">
-                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
-                </div>
-            {{/each}}
-        </td>
-        <td class="courses-section">
-            {{#each futurecourses}}
-                <div class="column">
-                    <div class="column-text">{{this.courseId}} — {{this.name}} | {{this.credits}} credits</div>
-                </div>
-            {{/each}}
-        </td>
-    </tr>
+    <div class="column">
+      <div class="course-header">Current Courses</div>
+      {{#each courses}}
+        <div class="course">
+          <div class="course-details">{{this.courseId}}—{{this.name}}</div>
+          <div class="credits">{{this.credits}}</div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="column">
+      <div class="course-header">Future Courses</div>
+      {{#each futurecourses}}
+        <div class="course">
+          <div class="course-details">{{this.courseId}}—{{this.name}}</div>
+          <div class="credits">{{this.credits}}</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
 {{/if}}
