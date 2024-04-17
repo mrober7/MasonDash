@@ -97,11 +97,12 @@ const future = {
     },
 
     _renderCourse(courseId) {
-        let matchedCourses = this.matchedCourses.filter((course) => {
-            let id = course.id.split("-")[0];
-            return id === courseId;
-        });
-        let course = matchedCourses[0];
+        const course = this.matchedCourses.find((course) => course.id.split("-")[0] === courseId);
+        // if the course doesn't exist, return from the method
+        if (!course) {
+            return;
+        }
+
         let days = course.days;
         days.forEach((day) => {
             for (const [key, value] of Object.entries(day)) {
@@ -126,6 +127,12 @@ const future = {
         });
     },
 
+    _removeCourse(courseId) {
+        // stops the course from being displayed
+        const courseElements = this.element.querySelectorAll(`.${courseId}`);
+        courseElements.forEach(courseElement => courseElement.remove());
+    },
+
     // private method to bind event listeners for the layout
     _bindListeners() {
         // select all elements with the class 'header-link' in the layout
@@ -142,16 +149,11 @@ const future = {
         // select all elements with the class 'header-link' in the layout
         let events = this.element.querySelectorAll('.day-event');
 
-        // add a click event for elements with day-event class
         this.element.addEventListener("click", (e) => {
-            let target = e.target;
+            const target = e.target;
             if (target.classList.contains("day-event")) {
-                // get the dialogtarget attribute value from the clicked link
-                let courseId = e.target.getAttribute('courseid');
-                let courseData = this.matchedCourses.filter((row) => {
-                    return row.id.includes(courseId);
-                })[0];
-                //inject data into dialog 
+                const courseId = target.getAttribute('courseid');
+                const courseData = this.matchedCourses.find((row) => row.id.includes(courseId));
                 let dialogHtml = template({
                     dialogcontent: true,
                     data: courseData,
@@ -164,6 +166,18 @@ const future = {
                 closeButton.addEventListener("click", () => {
                     this.dialog.close();
                 });
+            }
+        });
+
+        // right click to remove a course from the future schedule
+        this.element.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            const target = e.target;
+            if (target.classList.contains("day-event")) {
+                const courseId = target.getAttribute('courseid');
+                if (confirm(`Are you sure you want to remove course ${courseId}?`)) {
+                    this._removeCourse(courseId);
+                }
             }
         });
     },
