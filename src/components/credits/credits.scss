@@ -3,7 +3,6 @@
     &.credits {
       #wrapper {
         display: flex;
-        flex-wrap: wrap;
         gap: 10px;
         padding: 10px;
 
@@ -35,6 +34,14 @@
               height: auto;
               margin-right: 5px;
             }
+          }
+        }
+      }
+      @media (max-width: 1180px) {
+        #wrapper {
+          display:inline;
+          .column {
+            padding: 10px;
           }
         }
       }

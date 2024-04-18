@@ -18,7 +18,7 @@
     .header-title {
       padding: 0 10px;
       font-weight: bold;
-      color: var(--mason-section-head-text);
+      color: var(--mason-section-head-text);;
     }
   }
   .header-user {
@@ -33,7 +33,7 @@
 
     .select-theme {
       background-color: var(--mason-section-background1);
-      color: var(--mason-section-head-text);
+      color: white;
       border-radius: 5px;
       padding: 5px;
     }
@@ -77,8 +77,8 @@
 
   .item {
     background-color: var(--mason-section-background3);
-    border-radius: 5px;
     color: white;
+    border-radius: 5px;
     margin-bottom: 10px;
     user-select: none;
     display: flex;
