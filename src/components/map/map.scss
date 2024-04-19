@@ -3,13 +3,21 @@
     &.map {
       .map-container {
         display: flex;
+        flex-direction: row;
         padding: 10px;
         gap: 10px;
+
+        @media (max-width: 890px) {
+          flex-direction: column;
+          height: 500px;
+        }
+
         .map-image {
           border: 1px solid black;
           flex: 1;
           position: relative;
           height: 500px;
+          width: 450px;
           overflow: hidden;
           img {
             top: -290px;
@@ -20,17 +28,22 @@
             transition: all 0.3s ease-in-out;
             filter: grayscale(1);
           }
+
           @media (max-width: 1200px) {
             img {
               top: -290px;
               left: -230px;
             }
           }
+
           @media (max-width: 1060px) {
             img {
               top: -290px;
               left: -360px;
             }
+          }
+          @media (max-width: 508px) {
+            width: 350px;
           }
         }
         .map-view {
@@ -40,6 +53,17 @@
           display: flex;
           place-items: center;
           flex-direction: row;
+          overflow: hidden;
+
+          @media (max-width: 890px) {
+            height: 200px;
+            width: 450px;
+          }
+          @media (max-width: 508px) {
+            height: 200px;
+            width: 350px;
+          }
+
           img {
             width: 100%;
           }
