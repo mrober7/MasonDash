@@ -97,32 +97,22 @@ const future = {
     },
 
     _renderCourse(courseId) {
-        const course = this.matchedCourses.find((course) => course.id.split("-")[0] === courseId);
-        // if the course doesn't exist, return from the method
-        if (!course) {
-            return;
-        }
-
-        let days = course.days;
-        days.forEach((day) => {
+        const course = this.matchedCourses.find(course => course.id.split("-")[0] === courseId);
+        if (!course) return;
+    
+        course.days.forEach(day => {
             for (const [key, value] of Object.entries(day)) {
-                let start = value[0];
-                let end = value[1];
-                let startPos = this._timeDiff(start) / 1.5; //1.5 because of 60px height
-                let endPos = this._timeDiff(end) / 1.5; //1.5 because of 60px height
-                let height = endPos - startPos;
-                let dayElement = this.element.querySelector(
-                    `.day.${key.toLowerCase()}`
-                );
-                let html = `<div
-                            class='day-event ${course.id}'
-                            style='top: ${startPos}px;height: ${height}px;'
-                            start='${start}' end='${end}'
-                            courseid='${course.id}'
-                            >${courseId}</div>`;
-                dayElement
-                    .querySelector(`.day-events`)
-                    .insertAdjacentHTML("beforeend", html);
+                const [start, end] = value;
+                const startPos = this._timeDiff(start) / 1.5; //1.5 because of 60px height
+                const endPos = this._timeDiff(end) / 1.5; //1.5 because of 60px height
+                const height = endPos - startPos;
+                const dayElement = this.element.querySelector(`.day.${key.toLowerCase()}`);
+                const html = `
+                    <div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}' courseid='${course.id}'>
+                        ${courseId}
+                        <button class='remove-course' data-courseid='${course.id}'>x</button>
+                    </div>`;
+                dayElement.querySelector(`.day-events`).insertAdjacentHTML("beforeend", html);
             }
         });
     },
@@ -149,11 +139,11 @@ const future = {
         // select all elements with the class 'header-link' in the layout
         let events = this.element.querySelectorAll('.day-event');
 
-        this.element.addEventListener("click", (e) => {
+        this.element.addEventListener("click", e => {
             const target = e.target;
-            if (target.classList.contains("day-event")) {
+            if (target.classList.contains("day-event") && !target.classList.contains("remove-course")) {
                 const courseId = target.getAttribute('courseid');
-                const courseData = this.matchedCourses.find((row) => row.id.includes(courseId));
+                const courseData = this.matchedCourses.find(row => row.id.includes(courseId));
                 let dialogHtml = template({
                     dialogcontent: true,
                     data: courseData,
@@ -166,15 +156,9 @@ const future = {
                 closeButton.addEventListener("click", () => {
                     this.dialog.close();
                 });
-            }
-        });
-
-        // right click to remove a course from the future schedule
-        this.element.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-            const target = e.target;
-            if (target.classList.contains("day-event")) {
-                const courseId = target.getAttribute('courseid');
+            } 
+            else if (target.classList.contains("remove-course")) {
+                const courseId = target.dataset.courseid;
                 this._removeCourse(courseId);
             }
         });

@@ -44,6 +44,25 @@
                             left: 0px;
                             width: 100%;
 
+                            .remove-course {
+                                position: absolute;
+                                top: -5px;  // button offset
+                                right: -5px;    // button offset
+                                background-color: red;
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                font-size: 12px;
+                                line-height: 18px;
+                                display: none; // hidden by default
+                            }
+                            &:hover .remove-course {
+                                display: block; // shows on hover
+                            }
+
                             &:hover {
                                 cursor: pointer;
                                 &:before {
