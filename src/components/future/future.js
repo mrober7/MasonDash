@@ -175,9 +175,7 @@ const future = {
             const target = e.target;
             if (target.classList.contains("day-event")) {
                 const courseId = target.getAttribute('courseid');
-                if (confirm(`Are you sure you want to remove course ${courseId}?`)) {
-                    this._removeCourse(courseId);
-                }
+                this._removeCourse(courseId);
             }
         });
     },
