@@ -110,7 +110,7 @@ const future = {
                 const html = `
                     <div class='day-event ${course.id}' style='top: ${startPos}px;height: ${height}px;' start='${start}' end='${end}' courseid='${course.id}'>
                         ${courseId}
-                        <button class='remove-course' data-courseid='${course.id}'>x</button>
+                        <button class='remove-course' data-courseid='${course.id}'>𐌢</button>
                     </div>`;
                 dayElement.querySelector(`.day-events`).insertAdjacentHTML("beforeend", html);
             }

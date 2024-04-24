@@ -46,21 +46,21 @@
 
                             .remove-course {
                                 position: absolute;
-                                top: -5px;  // button offset
-                                right: -5px;    // button offset
+                                top: 0px;
+                                right: 0px;
                                 background-color: red;
-                                color: white;
+                                color: white; 
                                 border: none;
                                 cursor: pointer;
-                                width: 20px;
-                                height: 20px;
-                                border-radius: 50%;
-                                font-size: 12px;
-                                line-height: 18px;
-                                display: none; // hidden by default
+                                width: 20px; 
+                                height: 20px; 
+                                font-size: 10px; 
+                                line-height: 18px; 
+                                display: none; 
+                                
                             }
                             &:hover .remove-course {
-                                display: block; // shows on hover
+                                display: block; 
                             }
 
                             &:hover {
