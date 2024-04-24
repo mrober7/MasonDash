@@ -25,6 +25,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             img {
                 position: absolute;
                 top: 0;
@@ -85,19 +86,19 @@
             }
         }
     }
-    @media (max-width: 768px) {
-        .login-box {
-            flex-direction: column;
-            .divider {
-                background: var(--mason-section-accent3);
-                height: 3px;
-                width: 13rem;
-            }
-            .login-form {
-                padding-top: 1rem;
-            }
-        }
-    }
+    // @media (max-width: 768px) {
+    //     .login-box {
+    //         flex-direction: column;
+    //         .divider {
+    //             background: var(--mason-section-accent3);
+    //             height: 8px;
+    //             width: 13rem;
+    //         }
+    //         .login-form {
+    //             padding-top: 1rem;
+    //         }
+    //     }
+    // }
 }
 
 @keyframes bounce {
