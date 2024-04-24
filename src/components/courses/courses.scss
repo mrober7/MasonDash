@@ -46,6 +46,7 @@
 
                             &:hover {
                                 cursor: pointer;
+                                
                                 &:before {
                                     content: attr(start);
                                     position: absolute;
@@ -54,6 +55,7 @@
                                     font-size: 60%;
                                     width: 50px;
                                     text-align: right;
+                                    color: var(--mason-section-head-text);
                                 }
                                 &:after {
                                     content: attr(end);
@@ -63,6 +65,7 @@
                                     font-size: 60%;
                                     width: 50px;
                                     text-align: right;
+                                    color: var(--mason-section-head-text);
                                 }
                             }
                             &.CS321-002 {

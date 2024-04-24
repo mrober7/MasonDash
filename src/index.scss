@@ -78,12 +78,12 @@ body {
   }
   &[data-theme="sea"] {
     --mason-section-background1: #dab200;
-    --mason-section-background2: #02938c;
+    --mason-section-background2: #00bcb3;
     --mason-section-background3: #fde8a2;
     --mason-section-accent1: #008060;
     --mason-section-accent2: #005383;
     --mason-section-accent3: #003000;
-    --mason-section-head-text: #ffffff;
+    --mason-section-head-text: #000000;
     .header {
         .header-link {
             filter: var(--mason-exit-filter-invert);
