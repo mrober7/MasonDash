@@ -10,6 +10,12 @@ Our project involved the creation of a responsive web application that allows Ge
 
 You can access the live, working version of our web application here: https://masondash.sreenaina.com/
 
+## Demo Login
+
+To explore the features of MasonDash, you can log in using the following GNumber:
+
+G01319827
+
 ## Our Team
 
 Sreenaina Koujala (team lead)
