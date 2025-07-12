@@ -8,8 +8,7 @@ Our project involved the creation of a responsive web application that allows Ge
 
 ## Usage
 
-You can access the live, working version of our web application here: https://masondash.sreenaina.com/
-
+You can access the live, working version of our web application here: https://masondash.sreenaina.com/login.html
 ## Demo Login
 
 To explore the features of MasonDash, you can log in using the following GNumber:
